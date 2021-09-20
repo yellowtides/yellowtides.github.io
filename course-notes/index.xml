@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Course-notes on Maths. CompSci. Study notes.</title>
-    <link>https://yellowtid.es/course-notes/</link>
+    <link>/course-notes/</link>
     <description>Recent content in Course-notes on Maths. CompSci. Study notes.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2021, Andi Dicu.</copyright>
-    <lastBuildDate>Mon, 20 Sep 2021 13:30:01 +0100</lastBuildDate><atom:link href="https://yellowtid.es/course-notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Sep 2021 13:30:01 +0100</lastBuildDate><atom:link href="/course-notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Assessment</title>
-      <link>https://yellowtid.es/course-notes/ug2/probability/assessment/</link>
+      <link>/course-notes/ug2/probability/assessment/</link>
       <pubDate>Mon, 20 Sep 2021 13:30:01 +0100</pubDate>
       
-      <guid>https://yellowtid.es/course-notes/ug2/probability/assessment/</guid>
+      <guid>/course-notes/ug2/probability/assessment/</guid>
       <description>Essential assessment details  100% coursework  4 hand-ins worth 20% (one hand-in every two weeks) 1 5 online quizzes worth 30% (one quiz every two weeks) 2 10 annotations worth 10% (one annotation per week) 1 final quiz worth 40%      Starting week 4.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
  Starting week 3.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
    </description>
@@ -21,66 +21,66 @@
     
     <item>
       <title>Assessment</title>
-      <link>https://yellowtid.es/course-notes/ug2/svcde/assessment/</link>
+      <link>/course-notes/ug2/svcde/assessment/</link>
       <pubDate>Mon, 20 Sep 2021 13:30:01 +0100</pubDate>
       
-      <guid>https://yellowtid.es/course-notes/ug2/svcde/assessment/</guid>
+      <guid>/course-notes/ug2/svcde/assessment/</guid>
       <description>Essential assessment details  60% exam  online, open-book, 2 hours long end of semester 1   40% coursework  10 online quizzes worth 25% (one quiz per week) 1 10 hand-ins worth 15% (one hand-in per week) 1      9 best count.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
    </description>
     </item>
     
     <item>
       <title>Links</title>
-      <link>https://yellowtid.es/course-notes/ug2/probability/links/</link>
+      <link>/course-notes/ug2/probability/links/</link>
       <pubDate>Mon, 20 Sep 2021 13:29:55 +0100</pubDate>
       
-      <guid>https://yellowtid.es/course-notes/ug2/probability/links/</guid>
+      <guid>/course-notes/ug2/probability/links/</guid>
       <description>Relevant links I&amp;rsquo;ve found useful throughout the course </description>
     </item>
     
     <item>
       <title>Links</title>
-      <link>https://yellowtid.es/course-notes/ug2/svcde/links/</link>
+      <link>/course-notes/ug2/svcde/links/</link>
       <pubDate>Mon, 20 Sep 2021 13:29:55 +0100</pubDate>
       
-      <guid>https://yellowtid.es/course-notes/ug2/svcde/links/</guid>
+      <guid>/course-notes/ug2/svcde/links/</guid>
       <description>Relevant links I&amp;rsquo;ve found useful throughout the course  Lectures + Revision 1    Requires enrolment on the course.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
    </description>
     </item>
     
     <item>
       <title>Timings</title>
-      <link>https://yellowtid.es/course-notes/ug2/probability/timings/</link>
+      <link>/course-notes/ug2/probability/timings/</link>
       <pubDate>Mon, 20 Sep 2021 13:29:49 +0100</pubDate>
       
-      <guid>https://yellowtid.es/course-notes/ug2/probability/timings/</guid>
+      <guid>/course-notes/ug2/probability/timings/</guid>
       <description>Deadlines to learn by heart  Every piece of assessment is due at 16:00 BST. Annotations  due every week on Tuesday   Hand-ins  due weeks 4, 6, 8, 10 on Wednesday   Online quizzes  due weeks 3, 5, 7, 9, 11 on Wednesday   Final quiz  due on 17/12/2021 (Friday)  7 day extensions permitted – apply via the ESC online system      Timetable     Monday Tuesday Wednesday Thursday Friday     var.</description>
     </item>
     
     <item>
       <title>Timings</title>
-      <link>https://yellowtid.es/course-notes/ug2/svcde/timings/</link>
+      <link>/course-notes/ug2/svcde/timings/</link>
       <pubDate>Mon, 20 Sep 2021 13:29:49 +0100</pubDate>
       
-      <guid>https://yellowtid.es/course-notes/ug2/svcde/timings/</guid>
+      <guid>/course-notes/ug2/svcde/timings/</guid>
       <description>Deadlines to learn by heart  Online quizzes  set on Friday due on Friday at 11:00 am  no extensions or exemptions no late submissions     Hand-ins  set on Friday due on Friday at 11:00 am  no extensions or exemptions no late submissions      Timetable     Monday Tuesday Wednesday Thursday Friday     5pm. Q&amp;amp;A var.</description>
     </item>
     
     <item>
       <title>Probability</title>
-      <link>https://yellowtid.es/course-notes/ug2/probability/</link>
+      <link>/course-notes/ug2/probability/</link>
       <pubDate>Mon, 20 Sep 2021 10:57:26 +0100</pubDate>
       
-      <guid>https://yellowtid.es/course-notes/ug2/probability/</guid>
+      <guid>/course-notes/ug2/probability/</guid>
       <description>Probability  Admin  Timetable &amp;amp; deadlines Handy links Assessment  Notes  Week 1 &amp;ndash; Basic Theory of Probability  </description>
     </item>
     
     <item>
       <title>Several Variable Calculus and Differential Equations</title>
-      <link>https://yellowtid.es/course-notes/ug2/svcde/</link>
+      <link>/course-notes/ug2/svcde/</link>
       <pubDate>Mon, 20 Sep 2021 10:57:26 +0100</pubDate>
       
-      <guid>https://yellowtid.es/course-notes/ug2/svcde/</guid>
+      <guid>/course-notes/ug2/svcde/</guid>
       <description>Several Variable Calculus and Differential Equations  Admin  Timetable &amp;amp; deadlines Handy links Assessment  Notes  Week 1 &amp;ndash; Vectors &amp;amp; Vector Functions  </description>
     </item>
     

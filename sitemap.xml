@@ -2,65 +2,65 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://yellowtid.es/</loc>
+    <loc>/</loc>
     <lastmod>2021-09-20T13:30:01+01:00</lastmod>
     <priority>0</priority>
   </url><url>
-    <loc>https://yellowtid.es/course-notes/ug2/probability/assessment/</loc>
+    <loc>/course-notes/ug2/probability/assessment/</loc>
     <lastmod>2021-09-20T13:30:01+01:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/course-notes/ug2/svcde/assessment/</loc>
+    <loc>/course-notes/ug2/svcde/assessment/</loc>
     <lastmod>2021-09-20T13:30:01+01:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/course-notes/</loc>
+    <loc>/course-notes/</loc>
     <lastmod>2021-09-20T13:30:01+01:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/course-notes/ug2/probability/links/</loc>
+    <loc>/course-notes/ug2/probability/links/</loc>
     <lastmod>2021-09-20T13:29:55+01:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/course-notes/ug2/svcde/links/</loc>
+    <loc>/course-notes/ug2/svcde/links/</loc>
     <lastmod>2021-09-20T13:29:55+01:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/course-notes/ug2/probability/timings/</loc>
+    <loc>/course-notes/ug2/probability/timings/</loc>
     <lastmod>2021-09-20T13:29:49+01:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/course-notes/ug2/svcde/timings/</loc>
+    <loc>/course-notes/ug2/svcde/timings/</loc>
     <lastmod>2021-09-20T13:29:49+01:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/course-notes/ug2/probability/</loc>
+    <loc>/course-notes/ug2/probability/</loc>
     <lastmod>2021-09-20T10:57:26+01:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/course-notes/ug2/svcde/</loc>
+    <loc>/course-notes/ug2/svcde/</loc>
     <lastmod>2021-09-20T10:57:26+01:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/write-ups/</loc>
+    <loc>/write-ups/</loc>
     <lastmod>2021-08-18T13:19:15+03:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/self-study-notes/lfsr/</loc>
+    <loc>/self-study-notes/lfsr/</loc>
     <lastmod>2021-08-17T23:54:51+03:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/self-study-notes/</loc>
+    <loc>/self-study-notes/</loc>
     <lastmod>2021-08-17T23:54:51+03:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/self-study-notes/</loc>
+    <loc>/self-study-notes/</loc>
     <lastmod>2021-08-17T23:47:01+03:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/blog/</loc>
+    <loc>/blog/</loc>
     <lastmod>2021-08-16T17:22:39+03:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/blog/posts/computing-discrete-logs-over-gf2-n-in-practice/</loc>
+    <loc>/blog/posts/computing-discrete-logs-over-gf2-n-in-practice/</loc>
     <lastmod>2021-08-16T17:22:39+03:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/blog/tags/maths/</loc>
+    <loc>/blog/tags/maths/</loc>
     <lastmod>2021-08-16T17:22:39+03:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/blog/tags/pari/</loc>
+    <loc>/blog/tags/pari/</loc>
     <lastmod>2021-08-16T17:22:39+03:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/blog/tags/sage/</loc>
+    <loc>/blog/tags/sage/</loc>
     <lastmod>2021-08-16T17:22:39+03:00</lastmod>
   </url><url>
-    <loc>https://yellowtid.es/course-notes/</loc>
+    <loc>/course-notes/</loc>
     <lastmod>2021-08-16T14:25:44+03:00</lastmod>
   </url>
 </urlset>
