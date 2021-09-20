@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Self-study-notes on Maths. CompSci. Study notes.</title>
+    <link>https://yellowtid.es/self-study-notes/</link>
+    <description>Recent content in Self-study-notes on Maths. CompSci. Study notes.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2021, Andi Dicu.</copyright>
+    <lastBuildDate>Tue, 17 Aug 2021 23:54:51 +0300</lastBuildDate><atom:link href="https://yellowtid.es/self-study-notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LFSRs</title>
+      <link>https://yellowtid.es/self-study-notes/lfsr/</link>
+      <pubDate>Tue, 17 Aug 2021 23:54:51 +0300</pubDate>
+      
+      <guid>https://yellowtid.es/self-study-notes/lfsr/</guid>
+      <description>First, a primer The LFSRs (Linear Feedback Shift Registers) represent a family of very low-level, simple to implement, and darn quick ways of generating seemingly random sequences of bits. It is no surprise then that they are often used as PRNGs (pseudo-random number generators).
+ In spite of their many aforementioned practical qualities they are, however, definitely not well known for their cryptographic strength.
+ But let&amp;rsquo;s take things one at a time.</description>
+    </item>
+    
+  </channel>
+</rss>

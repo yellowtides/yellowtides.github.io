@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LFSRs λ yellowtid.es</title>
+<meta name="title" content="LFSRs" />
+<meta name="description" content="First, a primer The LFSRs (Linear Feedback Shift Registers) represent a family of very low-level, simple to implement, and darn quick ways of generating seemingly random sequences of bits. It is no surprise then that they are often used as PRNGs (pseudo-random number generators).
+ In spite of their many aforementioned practical qualities they are, however, definitely not well known for their cryptographic strength.
+ But let&rsquo;s take things one at a time." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="LFSRs" />
+<meta property="og:description" content="First, a primer The LFSRs (Linear Feedback Shift Registers) represent a family of very low-level, simple to implement, and darn quick ways of generating seemingly random sequences of bits. It is no surprise then that they are often used as PRNGs (pseudo-random number generators).
+ In spite of their many aforementioned practical qualities they are, however, definitely not well known for their cryptographic strength.
+ But let&rsquo;s take things one at a time." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yellowtid.es/self-study-notes/lfsr/" /><meta property="og:image" content="https://yellowtid.es/images/share.png"/><meta property="article:section" content="self-study-notes" />
+<meta property="article:published_time" content="2021-08-17T23:54:51+03:00" />
+<meta property="article:modified_time" content="2021-08-17T23:54:51+03:00" /><meta property="og:site_name" content="Maths. CompSci. Study notes." />
+
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yellowtid.es/images/share.png"/>
+
+<meta name="twitter:title" content="LFSRs"/>
+<meta name="twitter:description" content="First, a primer The LFSRs (Linear Feedback Shift Registers) represent a family of very low-level, simple to implement, and darn quick ways of generating seemingly random sequences of bits. It is no surprise then that they are often used as PRNGs (pseudo-random number generators).
+ In spite of their many aforementioned practical qualities they are, however, definitely not well known for their cryptographic strength.
+ But let&rsquo;s take things one at a time."/>
+
+
+
+<meta itemprop="name" content="LFSRs">
+<meta itemprop="description" content="First, a primer The LFSRs (Linear Feedback Shift Registers) represent a family of very low-level, simple to implement, and darn quick ways of generating seemingly random sequences of bits. It is no surprise then that they are often used as PRNGs (pseudo-random number generators).
+ In spite of their many aforementioned practical qualities they are, however, definitely not well known for their cryptographic strength.
+ But let&rsquo;s take things one at a time."><meta itemprop="datePublished" content="2021-08-17T23:54:51+03:00" />
+<meta itemprop="dateModified" content="2021-08-17T23:54:51+03:00" />
+<meta itemprop="wordCount" content="246"><meta itemprop="image" content="https://yellowtid.es/images/share.png"/>
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #262626;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+  code.has-jax {
+    -webkit-font-smoothing: antialiased;
+    background: inherit !important;
+    border: none !important;
+    font-size: 100%;
+  }
+
+</style>
+
+
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Maths. CompSci. Study notes.</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/course-notes/">Course notes</a>
+
+<a href="/self-study-notes/">Self-study notes</a>
+
+<a href="/write-ups/">Write-ups</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+    
+      
+        
+
+<content>
+  <h2 id="first-a-primer">First, a primer</h2>
+<p>The LFSRs (Linear Feedback Shift Registers) represent a family of very low-level, simple to implement, and <em>darn</em> quick ways of generating seemingly random sequences of bits. It is no surprise then that they are often used as <em>PRNGs</em> (<a href="https://en.wikipedia.org/wiki/Pseudorandom_number_generator">pseudo-random number generators</a>).</p>
+<blockquote>
+<p>In spite of their many aforementioned practical qualities they are, however, definitely not well known for their cryptographic strength.</p>
+</blockquote>
+<p>But let&rsquo;s take things one at a time. So, how do they work?</p>
+<h2 id="a-birds-eye-view-of-an-lfsrs-functionality">A bird&rsquo;s-eye view of an LFSR&rsquo;s functionality</h2>
+<pre><code>[b1][b2][b3][b4][b5]...[bn]
+</code></pre><p>Imagine for a second that the above is a sequence of $n$ bits. We call this initial sequence the <strong>seed</strong> of the LFSR.</p>
+<p>To obtain a new $n$-bit sequence, we apply the following recurrence rule:</p>
+<pre><code>[b1][b2][b3][b4][b5]...[bn]
+  \   \   \   \   \   \
+    \   \   \   \   \   \
+[x0][b1][b2][b3][b4]...[bn-1]
+</code></pre><p>where $x_0 = \bigoplus_{k=1}^n t_kb_k$ is the sole new bit. $b_n$ is discarded, and all other bits are shifted one position to the right.</p>
+<p>In general, $k$ is called a <em>tap</em> of the LFSR $\iff$ $t_k = 1$.</p>
+<blockquote>
+<p>Conceptually, taps can be thought of as <em>positions which contribute towards the birth of a new bit</em>.</p>
+</blockquote>
+<p>Note that this sequence of $n$-bit sequences (let&rsquo;s call this $(L_n)$) has an order of sorts. Since every state is entirely dependent on the state before it and there exist only $2^n$ distinct sequences of bits, this &ldquo;order&rdquo; can be at the very most $2^n$. Hence,</p>
+<p>$$\forall L : \exists ord(L) \in (0, 2^n) : L_{ord(L)} = L_{0}.$$</p>
+
+</content>
+<p>
+  
+</p>
+
+      
+    
+  </main>
+  <footer>
+</footer>
+
+    
+</body>
+
+</html>

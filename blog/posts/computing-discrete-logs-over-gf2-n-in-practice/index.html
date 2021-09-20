@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Computing discrete logs over GF(2 ^ n) in practice λ yellowtid.es</title>
+<meta name="title" content="Computing discrete logs over GF(2 ^ n) in practice" />
+<meta name="description" content="Quick how-to # sage K.&lt;x&gt; = GF(2 ** n, impl=&#39;pari_ffelt&#39;) # invoke pari via SageMath&#39;s bindings g = K(x ** 4 &#43; x ** 2 &#43; 1) h = g ** 123 h.log(g) # =&gt; 123 The exact implementation SageMath uses for .log() with pari_ffelt can be found here.
+Even for a (relatively) large $n$ this seems to be instantaneous, as opposed to the default implementation which simply hangs.
+Other things to note Performing this calculation directly (in PARI/GP), e." />
+<meta name="keywords" content="maths,sage,pari," />
+
+
+<meta property="og:title" content="Computing discrete logs over GF(2 ^ n) in practice" />
+<meta property="og:description" content="Quick how-to # sage K.&lt;x&gt; = GF(2 ** n, impl=&#39;pari_ffelt&#39;) # invoke pari via SageMath&#39;s bindings g = K(x ** 4 &#43; x ** 2 &#43; 1) h = g ** 123 h.log(g) # =&gt; 123 The exact implementation SageMath uses for .log() with pari_ffelt can be found here.
+Even for a (relatively) large $n$ this seems to be instantaneous, as opposed to the default implementation which simply hangs.
+Other things to note Performing this calculation directly (in PARI/GP), e." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yellowtid.es/blog/posts/computing-discrete-logs-over-gf2-n-in-practice/" /><meta property="og:image" content="https://yellowtid.es/images/share.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2021-08-16T17:22:39+03:00" />
+<meta property="article:modified_time" content="2021-08-16T17:22:39+03:00" /><meta property="og:site_name" content="Maths. CompSci. Study notes." />
+
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yellowtid.es/images/share.png"/>
+
+<meta name="twitter:title" content="Computing discrete logs over GF(2 ^ n) in practice"/>
+<meta name="twitter:description" content="Quick how-to # sage K.&lt;x&gt; = GF(2 ** n, impl=&#39;pari_ffelt&#39;) # invoke pari via SageMath&#39;s bindings g = K(x ** 4 &#43; x ** 2 &#43; 1) h = g ** 123 h.log(g) # =&gt; 123 The exact implementation SageMath uses for .log() with pari_ffelt can be found here.
+Even for a (relatively) large $n$ this seems to be instantaneous, as opposed to the default implementation which simply hangs.
+Other things to note Performing this calculation directly (in PARI/GP), e."/>
+
+
+
+<meta itemprop="name" content="Computing discrete logs over GF(2 ^ n) in practice">
+<meta itemprop="description" content="Quick how-to # sage K.&lt;x&gt; = GF(2 ** n, impl=&#39;pari_ffelt&#39;) # invoke pari via SageMath&#39;s bindings g = K(x ** 4 &#43; x ** 2 &#43; 1) h = g ** 123 h.log(g) # =&gt; 123 The exact implementation SageMath uses for .log() with pari_ffelt can be found here.
+Even for a (relatively) large $n$ this seems to be instantaneous, as opposed to the default implementation which simply hangs.
+Other things to note Performing this calculation directly (in PARI/GP), e."><meta itemprop="datePublished" content="2021-08-16T17:22:39+03:00" />
+<meta itemprop="dateModified" content="2021-08-16T17:22:39+03:00" />
+<meta itemprop="wordCount" content="185"><meta itemprop="image" content="https://yellowtid.es/images/share.png"/>
+<meta itemprop="keywords" content="maths,sage,pari," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #262626;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+  code.has-jax {
+    -webkit-font-smoothing: antialiased;
+    background: inherit !important;
+    border: none !important;
+    font-size: 100%;
+  }
+
+</style>
+
+
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Maths. CompSci. Study notes.</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/course-notes/">Course notes</a>
+
+<a href="/self-study-notes/">Self-study notes</a>
+
+<a href="/write-ups/">Write-ups</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+    
+      
+        
+
+<h1>Computing discrete logs over GF(2 ^ n) in practice</h1>
+<p>
+  <i>
+    <time datetime='2021-08-16' pubdate>
+      16 Aug, 2021
+    </time>
+  </i>
+</p>
+
+<content>
+  <h2 id="quick-how-to">Quick how-to</h2>
+<pre><code># sage
+K.&lt;x&gt; = GF(2 ** n, impl='pari_ffelt') # invoke pari via SageMath's bindings
+g = K(x ** 4 + x ** 2 + 1)
+h = g ** 123
+h.log(g) 	
+# =&gt; 123
+</code></pre><p>The exact implementation SageMath uses for <code>.log()</code> with <code>pari_ffelt</code> can be found <a href="https://github.com/sagemath/sage/blob/d6c5cd9be78cc448ee4c54bac93385b1244a234c/src/sage/rings/finite_rings/element_pari_ffelt.pyx#L1019">here</a>.</p>
+<p>Even for a (relatively) large $n$ this seems to be instantaneous, as opposed to the default implementation which simply hangs.</p>
+<h2 id="other-things-to-note">Other things to note</h2>
+<p>Performing this calculation directly (in PARI/GP), e.g.</p>
+<pre><code># gp
+x = ffgen(2^n, 'x)
+g = x^4 + x^2 + 1 
+h = g^123
+fflog(h, g)
+# =&gt; 123
+</code></pre><p>makes PARI earnestly hand you a misleading result. As it turns out, <code>ffgen(2^n, 'x)</code> generates an irreducible monic polynomial of degree $n$ over $\mathbb{F}_{p}$ which serves as the modulus of your $\mathbb{F}_{p^n}$.</p>
+<p>There&rsquo;s no finite field structure in PARI. Finite fields are represented only with their elements (FFELTs).</p>
+<pre><code># gp
+x.mod
+# =&gt; degree n irreducible monic
+g.mod
+# =&gt; same degree n irreducible monic
+</code></pre><p>To avoid this, you can supply your own modulus. Irreducibility is not checked.</p>
+<pre><code># gp
+x = ffgen(modulus)
+...
+</code></pre>
+</content>
+<p>
+  
+  <a href="https://yellowtid.es/blog/tags/maths/">#maths</a>
+  
+  <a href="https://yellowtid.es/blog/tags/sage/">#sage</a>
+  
+  <a href="https://yellowtid.es/blog/tags/pari/">#pari</a>
+  
+</p>
+
+      
+    
+  </main>
+  <footer>
+</footer>
+
+    
+</body>
+
+</html>
