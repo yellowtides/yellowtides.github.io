@@ -90,7 +90,7 @@
       <pubDate>Wed, 18 Aug 2021 13:19:15 +0300</pubDate>
       
       <guid>/write-ups/</guid>
-      <description></description>
+      <description>None yet.</description>
     </item>
     
     <item>
@@ -105,15 +105,6 @@
     </item>
     
     <item>
-      <title>Self-study notes</title>
-      <link>/self-study-notes/</link>
-      <pubDate>Tue, 17 Aug 2021 23:47:01 +0300</pubDate>
-      
-      <guid>/self-study-notes/</guid>
-      <description>Notes on topics I study/ied outisde of uni.  Cryptography  LFSRs  </description>
-    </item>
-    
-    <item>
       <title>Computing discrete logs over GF(2 ^ n) in practice</title>
       <link>/blog/posts/computing-discrete-logs-over-gf2-n-in-practice/</link>
       <pubDate>Mon, 16 Aug 2021 17:22:39 +0300</pubDate>
@@ -122,16 +113,6 @@
       <description>Quick how-to # sage K.&amp;lt;x&amp;gt; = GF(2 ** n, impl=&#39;pari_ffelt&#39;) # invoke pari via SageMath&#39;s bindings g = K(x ** 4 + x ** 2 + 1) h = g ** 123 h.log(g) # =&amp;gt; 123 The exact implementation SageMath uses for .log() with pari_ffelt can be found here.
 Even for a (relatively) large $n$ this seems to be instantaneous, as opposed to the default implementation which simply hangs.
 Other things to note Performing this calculation directly (in PARI/GP), e.</description>
-    </item>
-    
-    <item>
-      <title>Course notes</title>
-      <link>/course-notes/</link>
-      <pubDate>Mon, 16 Aug 2021 14:25:44 +0300</pubDate>
-      
-      <guid>/course-notes/</guid>
-      <description>A collection of revision material from my undergraduate years at Edinburgh.  Year 2 1  Mathematics  Several Variable Calculus and Differential Equations Probability Fundamentals of Pure Mathematics  Computer Science  Introduction to Algorithms and Data Structures Foundations of Data Science Introduction to Computer Systems Reasoning and Agents    Academic year 2021/22.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
-   </description>
     </item>
     
   </channel>

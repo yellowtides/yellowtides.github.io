@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Self-study-notes on Maths. CompSci. Study notes.</title>
+    <title>Self-study notes on Maths. CompSci. Study notes.</title>
     <link>/self-study-notes/</link>
-    <description>Recent content in Self-study-notes on Maths. CompSci. Study notes.</description>
+    <description>Recent content in Self-study notes on Maths. CompSci. Study notes.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2021, Andi Dicu.</copyright>
-    <lastBuildDate>Tue, 17 Aug 2021 23:54:51 +0300</lastBuildDate><atom:link href="/self-study-notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Aug 2021 23:47:01 +0300</lastBuildDate><atom:link href="/self-study-notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>LFSRs</title>
       <link>/self-study-notes/lfsr/</link>
