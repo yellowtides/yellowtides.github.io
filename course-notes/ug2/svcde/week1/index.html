@@ -48,7 +48,7 @@ Geometrically, this represents the distance to the vector&rsquo;s tip from the o
 The unit vector $\hat{x}$ is the vector pointing in the direction of $\vec{x} \in \mathbb{R}^n$ of magnitude 1. So,
 $$\hat{x} = \frac{1}{|\vec{x}|}\vec{x}."><meta itemprop="datePublished" content="2021-09-20T13:30:30+01:00" />
 <meta itemprop="dateModified" content="2021-09-20T13:30:30+01:00" />
-<meta itemprop="wordCount" content="1131"><meta itemprop="image" content="images/share.png"/>
+<meta itemprop="wordCount" content="1130"><meta itemprop="image" content="images/share.png"/>
 <meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -333,14 +333,14 @@ x_1 &amp; x_2 &amp; x_3 \\
 y_1 &amp; y_2 &amp; y_3 \\
 \end{vmatrix}.
 $$</p>
-<p>Wow, that is suspiciously simple. So why does this work? Well, once we prove that the cross product is anti-commutative and linear, we can do a similar proof to the one sketched for the geometric-algebraic correspondence of the dot product. The final form will look like
+<p>Wow, that&rsquo;s suspiciously simple. So why does this work? Well, once we prove that the cross product is anti-commutative and linear, we can do a similar proof to the one sketched for the geometric-algebraic correspondence of the dot product. The final form will look like
 $$|(x_2y_3 - x_3y_2)\vec{i} + (x_3y_1 - x_1y_3)\vec{j} + (x_1y_2 - x_2y_1)\vec{k}|$$</p>
 <p>Which the given derivative just so happens to equal, after expanding along the first row. So yes, the beautiful derivative is in fact just a neat artithmetic trick!</p>
 <p>For further discussion about understanding the algebraic properties of dot and cross products (e.g. their linearity) please consult this <a href="https://www.maa.org/sites/default/files/images/images/upload_library/4/vol6/Dray2/Dray.pdf">amazing introductory article</a> by T. Dray and C. A. Manogue form the Journal of Online Mathematics.</p>
 <h4 id="a-couple-tricks-properties-involving-the-dot-and-the-cross-products">A couple tricks (properties) involving the dot and the cross products</h4>
 <p>Let $\vec{x}, \vec{y}, \vec{z} \in \mathbb{R}^3$. Then,</p>
 <p>$$\vec{x}\cdot(\vec{y}\times\vec{z}) = (\vec{x}\times\vec{y})\cdot\vec{z}$$</p>
-<p>Both represent the area of the parallelepiped specified by $(\vec{x}, \vec{y}, \vec{z})$.</p>
+<p>Both represent the volume of the parallelepiped specified by $(\vec{x}, \vec{y}, \vec{z})$.</p>
 <p>Moreover,</p>
 <p>$$\vec{x}\times(\vec{y}\cdot\vec{z}) =
 (\vec{x}\cdot\vec{z})\vec{y} - (\vec{x}\cdot\vec{y})\vec{z}
@@ -370,10 +370,10 @@ $$</p>
 <p>$$\mathcal{K}(t) = \bigg|\frac{\vec{T}'(t)}{\vec{s}'(t)}\bigg|$$</p>
 <p>In other words, how quickly the curve changes direction as $t$ increases. This is equivalent to:</p>
 <p>$$\mathcal{K}(t) = \frac{|\vec{T}'(t)|}{|\vec{r}'(t)|} = \frac{|\vec{r}'(t)\times\vec{r}''(t)|}{|\vec{r}'(t)|^3}.$$</p>
-<p>This can be proved through some basic vector algebra and calculus. Refer to the lecture notes for the proof.</p>
+<p>This can be proven through some basic vector algebra and calculus. Refer to the lecture notes for the proof.</p>
 <h2 id="19-normal-and-binormal-vectors">1.9 Normal and binormal vectors</h2>
 <p>As mentioned previously, all constant magnitude curves (living on a sphere) are orthogonal to their unit tangent vectors.</p>
-<p>Let $\vec{r}(t)$ be smooth. We know that it therefore must have a unit tangent vector $\vec{T}(t) = \frac{\vec{r}'(t)}{|\vec{r}'(t)|}$ of magnitude 1 which, by the above, is orthogonal to its derivative $\vec{T}''(t)$. In other words,</p>
+<p>Let $\vec{r}(t)$ be smooth. We know that it therefore must have a unit tangent vector $\vec{T}(t) = \frac{\vec{r}'(t)}{|\vec{r}'(t)|}$ of magnitude 1 which, by the above, is orthogonal to its derivative $\vec{T}'(t)$. In other words,</p>
 <p>$$\forall t : \vec{T}(t) \cdot \vec{T}'(t) = \vec{0}.$$</p>
 <p>Note however that unlike $\vec{T}(t)$, $\vec{T}'(t)$ might not necessarily always be of magnitude 1. This gives rise to the need of a new vector, the <strong>principal unit normal vector</strong> $\vec{N}(t)$:</p>
 <p>$$\vec{N}(t) = \frac{\vec{T}'(t)}{|\vec{T}'(t)|}.$$</p>
