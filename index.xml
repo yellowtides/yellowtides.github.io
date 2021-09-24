@@ -16,8 +16,18 @@
       <guid>/course-notes/ug2/svcde/week1/</guid>
       <description>SVCDE Week 1 – Vectors &amp;amp; Vector Functions  1.1 Basic properties The magnitude of a vector $\vec{x} = \Vector{x_1 \\ x_2 \\ .. \\ x_n} \in \mathbb{R}^n$ is
 $$|\vec{x}| = \sqrt{\sum_{k=1}^n x_k^2}$$
-Geometrically, this represents the distance of the vector&amp;rsquo;s tip from the origin and follows from the generalised Pythagoras&#39;.
-The unit vector $\hat{x}$ is the vector pointing in the direction of $\vec{x} \in \mathbb{R}^n$ of magnitude 1. So,</description>
+Geometrically, this represents the distance to the vector&amp;rsquo;s tip from the origin and follows from generalised Pythagoras&#39;.
+The unit vector $\hat{x}$ is the vector pointing in the direction of $\vec{x} \in \mathbb{R}^n$ of magnitude 1. So,
+$$\hat{x} = \frac{1}{|\vec{x}|}\vec{x}.</description>
+    </item>
+    
+    <item>
+      <title>Assessment</title>
+      <link>/course-notes/ug2/fds/assessment/</link>
+      <pubDate>Mon, 20 Sep 2021 13:30:01 +0100</pubDate>
+      
+      <guid>/course-notes/ug2/fds/assessment/</guid>
+      <description>Foundations of Data Science  Essential assessment details  100% coursework  2 major courseworks worth 20% each, split 1-1 over the two semesters 2 class tests worth 10% each, at the end of each semester 1 huge project worth 40% in the second half of semester 2    </description>
     </item>
     
     <item>
@@ -52,6 +62,15 @@ The unit vector $\hat{x}$ is the vector pointing in the direction of $\vec{x} \i
     
     <item>
       <title>Links</title>
+      <link>/course-notes/ug2/fds/links/</link>
+      <pubDate>Mon, 20 Sep 2021 13:29:55 +0100</pubDate>
+      
+      <guid>/course-notes/ug2/fds/links/</guid>
+      <description>Foundations of Data Science  Relevant links I&amp;rsquo;ve found useful throughout the course  None yet!  </description>
+    </item>
+    
+    <item>
+      <title>Links</title>
       <link>/course-notes/ug2/iads/links/</link>
       <pubDate>Mon, 20 Sep 2021 13:29:55 +0100</pubDate>
       
@@ -80,6 +99,24 @@ The unit vector $\hat{x}$ is the vector pointing in the direction of $\vec{x} \i
     
     <item>
       <title>Timings</title>
+      <link>/course-notes/ug2/fds/foo/</link>
+      <pubDate>Mon, 20 Sep 2021 13:29:49 +0100</pubDate>
+      
+      <guid>/course-notes/ug2/fds/foo/</guid>
+      <description>Foundations of Data Science  Deadlines to learn by heart    Assignment Set Due Extensions?     Coursework #1 29/10 12/11 @ 4pm. 1 Rule 3 of the LSC Policy   Coursework #2 04/02 18/02 @ 4pm. 2 idem.   Coursework #3 08/03 22/03 @ 4pm. 3 idem.   Quizzes Fri. 4 Wed. @ 4pm. 5 no    The exam will be sat during the Semester 2 exam diet (April/May).</description>
+    </item>
+    
+    <item>
+      <title>Timings</title>
+      <link>/course-notes/ug2/fds/timings/</link>
+      <pubDate>Mon, 20 Sep 2021 13:29:49 +0100</pubDate>
+      
+      <guid>/course-notes/ug2/fds/timings/</guid>
+      <description>Foundations of Data Science  Deadlines to learn by heart    Assignment Set Due Extensions?     Coursework #1 29/10 12/11 @ 4pm. 1 Rule 3 of the LSC Policy   Coursework #2 04/02 18/02 @ 4pm. 2 idem.   Coursework #3 08/03 22/03 @ 4pm. 3 idem.   Quizzes Fri. 4 Wed. @ 4pm. 5 no    The exam will be sat during the Semester 2 exam diet (April/May).</description>
+    </item>
+    
+    <item>
+      <title>Timings</title>
       <link>/course-notes/ug2/iads/timings/</link>
       <pubDate>Mon, 20 Sep 2021 13:29:49 +0100</pubDate>
       
@@ -103,6 +140,15 @@ The unit vector $\hat{x}$ is the vector pointing in the direction of $\vec{x} \i
       
       <guid>/course-notes/ug2/svcde/timings/</guid>
       <description>Several Variable Calculus and Differential Equations  Deadlines to learn by heart  Online quizzes  set on Friday due on Friday at 11:00 am  no extensions or exemptions no late submissions     Hand-ins  set on Friday due on Friday at 11:00 am  no extensions or exemptions no late submissions      Timetable     Monday Tuesday Wednesday Thursday Friday     5pm.</description>
+    </item>
+    
+    <item>
+      <title>Foundations of Data Science</title>
+      <link>/course-notes/ug2/fds/</link>
+      <pubDate>Mon, 20 Sep 2021 10:57:26 +0100</pubDate>
+      
+      <guid>/course-notes/ug2/fds/</guid>
+      <description>Foundations of Data Science  Admin  Timetable &amp;amp; deadlines Handy links Assessment  Notes  Week 1 &amp;ndash; Introduction to Python Pandas  </description>
     </item>
     
     <item>
