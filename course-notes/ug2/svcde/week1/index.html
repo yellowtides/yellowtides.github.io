@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Week1 λ yellowtid.es</title>
+<meta name="title" content="Week1" />
+<meta name="description" content="Week 1 – Vectors &amp; Vector Functions  1.1 Basic properties The dot product Let&rsquo;s think about a very general $\vec{x}\cdot \vec{y}$, where $\vec{x}, \vec{y} \in \mathbb{R}^n$. We are taught two different ways (or, more precisely, two different definitions) for how to go about computing this dot product:
+1. Algebraic $$\vec{x} \cdot \vec{y} = \Vector{x_1 \\ .. \\ x_n} \cdot \Vector{y_1 \\ .. \\ y_n} = \sum_{k=1}^n x_ky_k$$
+Which is a pretty straight-forward and extremely convenient entry-wise sum of products." />
+<meta name="keywords" content="" />
+
+
+<meta property="og:title" content="Week1" />
+<meta property="og:description" content="Week 1 – Vectors &amp; Vector Functions  1.1 Basic properties The dot product Let&rsquo;s think about a very general $\vec{x}\cdot \vec{y}$, where $\vec{x}, \vec{y} \in \mathbb{R}^n$. We are taught two different ways (or, more precisely, two different definitions) for how to go about computing this dot product:
+1. Algebraic $$\vec{x} \cdot \vec{y} = \Vector{x_1 \\ .. \\ x_n} \cdot \Vector{y_1 \\ .. \\ y_n} = \sum_{k=1}^n x_ky_k$$
+Which is a pretty straight-forward and extremely convenient entry-wise sum of products." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/course-notes/ug2/svcde/week1/" /><meta property="og:image" content="images/share.png"/><meta property="article:section" content="course-notes" />
+<meta property="article:published_time" content="2021-09-20T13:30:30+01:00" />
+<meta property="article:modified_time" content="2021-09-20T13:30:30+01:00" /><meta property="og:site_name" content="Maths. CompSci. Study notes." />
+
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="images/share.png"/>
+
+<meta name="twitter:title" content="Week1"/>
+<meta name="twitter:description" content="Week 1 – Vectors &amp; Vector Functions  1.1 Basic properties The dot product Let&rsquo;s think about a very general $\vec{x}\cdot \vec{y}$, where $\vec{x}, \vec{y} \in \mathbb{R}^n$. We are taught two different ways (or, more precisely, two different definitions) for how to go about computing this dot product:
+1. Algebraic $$\vec{x} \cdot \vec{y} = \Vector{x_1 \\ .. \\ x_n} \cdot \Vector{y_1 \\ .. \\ y_n} = \sum_{k=1}^n x_ky_k$$
+Which is a pretty straight-forward and extremely convenient entry-wise sum of products."/>
+
+
+
+<meta itemprop="name" content="Week1">
+<meta itemprop="description" content="Week 1 – Vectors &amp; Vector Functions  1.1 Basic properties The dot product Let&rsquo;s think about a very general $\vec{x}\cdot \vec{y}$, where $\vec{x}, \vec{y} \in \mathbb{R}^n$. We are taught two different ways (or, more precisely, two different definitions) for how to go about computing this dot product:
+1. Algebraic $$\vec{x} \cdot \vec{y} = \Vector{x_1 \\ .. \\ x_n} \cdot \Vector{y_1 \\ .. \\ y_n} = \sum_{k=1}^n x_ky_k$$
+Which is a pretty straight-forward and extremely convenient entry-wise sum of products."><meta itemprop="datePublished" content="2021-09-20T13:30:30+01:00" />
+<meta itemprop="dateModified" content="2021-09-20T13:30:30+01:00" />
+<meta itemprop="wordCount" content="384"><meta itemprop="image" content="images/share.png"/>
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #262626;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+  code.has-jax {
+    -webkit-font-smoothing: antialiased;
+    background: inherit !important;
+    border: none !important;
+    font-size: 100%;
+  }
+
+</style>
+
+
+  <script>
+  MathJax = {
+    loader: {load: ['[tex]/configmacros']},
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true,
+      packages: {'[+]': ['configmacros']},
+      macros: {
+          Vector: ['\\begin{bmatrix} #1 \\end{bmatrix}', 1]
+      }
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+    document.querySelectorAll("mjx-container").forEach(function(x){
+    x.parentElement.classList += 'has-jax'})
+  });
+
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+  <header><a href="../../../../" class="title">
+  <h2>Maths. CompSci. Study notes.</h2>
+</a>
+<nav><a href="../../../../">Home</a>
+
+<a href="../../../../course-notes/">Course notes</a>
+
+<a href="../../../../self-study-notes/">Self-study notes</a>
+
+<a href="../../../../write-ups/">Write-ups</a>
+
+
+<a href="../../../../blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+    
+
+<content>
+  <h2 id="week-1--vectors--vector-functions">Week 1 – Vectors &amp; Vector Functions</h2>
+<hr>
+<h3 id="11-basic-properties">1.1 Basic properties</h3>
+<h4 id="the-dot-product">The dot product</h4>
+<p>Let&rsquo;s think about a very general $\vec{x}\cdot \vec{y}$, where $\vec{x}, \vec{y} \in \mathbb{R}^n$. We are taught two different ways (or, more precisely, two different definitions) for how to go about computing this dot product:</p>
+<h5 id="1-algebraic">1. Algebraic</h5>
+<p>$$\vec{x} \cdot \vec{y} = \Vector{x_1 \\ .. \\ x_n} \cdot \Vector{y_1 \\ .. \\ y_n} = \sum_{k=1}^n x_ky_k$$</p>
+<p>Which is a pretty straight-forward and extremely convenient entry-wise sum of products. Or:</p>
+<h5 id="2-geometric">2. Geometric</h5>
+<p>$$\vec{x} \cdot \vec{y} = |\vec{x}||\vec{y}|\cos{\angle(\vec{x}, \vec{y})}$$</p>
+<p>Which corresponds to the product of the length of the the projection of $\vec{x}$ onto $\vec{y}$ and the length of $\vec{y}$, or vice-versa.</p>
+<h5 id="but-how-do-these-relate">But how do these relate????</h5>
+<p>We are often reassured that these two methods of thought are identical. But the correspondence is not very obvious, and (in my opinion) constitutes a pretty glaring gap. So here&rsquo;s a sketch of the proof! Helps intuition.</p>
+<h5 id="sketch">Sketch</h5>
+<p>First, rewrite our vectors in terms of an orthogonal basis. The simplest would of course be the good ol' standard basis $\{\vec{e_i} \mid i \in \{1, 2, &hellip;, n\}\}$. Then, $\vec{x} = \sum_{i=1}^nx_i\vec{e}_i$ and $\vec{y} = \sum_{i=1}^ny_i\vec{e}_i$.</p>
+<p>We will use the geometric definition and show that it is equivalent to the algebraic one.</p>
+<p>Therefore, note that $\vec{e}_i \cdot \vec{e}_j = \delta_{i,j}$, where $\delta$ is the <a href="https://en.wikipedia.org/wiki/Kronecker_delta">kronecker delta</a>, since the standard basis is composed of pair-wise orthogonal unit vectors (think about how this makes sense given the projection definition illustrated earlier!).</p>
+<p>Now everything becomes crystal clear. Rewrite $\vec{x}$ and $\vec{y}$ in terms of their sum-of-basis forms, and expand the multiplication. Note that the dot product can be shown to be both commutative and associative using its geometric definition. Hence,</p>
+<p>\begin{align}
+\vec{x}\cdot\vec{y} &amp;= \bigg(\sum_{i=1}^n x_i\vec{e}_i\bigg)\cdot\bigg(\sum_{i=1}^ny_i\vec{e}_i\bigg) \\<br>
+&amp;= \sum_{1\leq i \leq j \leq n} x_iy_j(\vec{e}_i\cdot\vec{e}_j) \\
+&amp;= \sum_{1 \leq i \leq j \leq n} x_iy_j\delta_{i, j} \\<br>
+&amp;= \sum_{1 \leq i \leq n} x_iy_i \\<br>
+\end{align}</p>
+<p>And done! Equivalence.</p>
+<h4 id="the-cross-product">The cross product</h4>
+<p>The cross product of some arbitrary $\mathbb{R}^n$ vectors $\vec{x}$ and $\vec{y}$ constructs a <strong>vector</strong> with the following convenient properties:</p>
+<ol>
+<li>it is orthogonal to both $\vec{x}$ and $\vec{y}$</li>
+<li>its magnitude is equal to the parallelogram formed by $\vec{x}$ and $\vec{y}$ (note that this means the cross product is $\vec{0}$ if $\vec{x} \mid\mid \vec{y}$)</li>
+<li>its direction can be deduced by the right-hand rule.</li>
+</ol>
+<p><img src="../../../../images/rhr.png" alt="right-hand-rule.png"></p>
+
+</content>
+
+
+  </main>
+  <footer>
+</footer>
+
+    
+</body>
+
+</html>
