@@ -22,11 +22,20 @@ The unit vector $\hat{x}$ is the vector pointing in the direction of $\vec{x} \i
     
     <item>
       <title>Assessment</title>
+      <link>/course-notes/ug2/iads/assessment/</link>
+      <pubDate>Mon, 20 Sep 2021 13:30:01 +0100</pubDate>
+      
+      <guid>/course-notes/ug2/iads/assessment/</guid>
+      <description>Introduction to Algorithms and Data Structures  Essential assessment details  60% exam  two parts:  Part A. 5 compulsory questions worth 10 marks each Part B. choice of 2/3 questions worth 25 marks each   semester 2 diet (April/May)   40% coursework  3 major courseworks worth 10% each, split 1-2 over the two semesters 6 multiple-choice quizzes worth 2% each 1  5-day window to complete them; time limit of one hour 3 per semester instant feedback        First one is for practice and does not count.</description>
+    </item>
+    
+    <item>
+      <title>Assessment</title>
       <link>/course-notes/ug2/probability/assessment/</link>
       <pubDate>Mon, 20 Sep 2021 13:30:01 +0100</pubDate>
       
       <guid>/course-notes/ug2/probability/assessment/</guid>
-      <description>Essential assessment details  100% coursework  4 hand-ins worth 20% (one hand-in every two weeks) 1 5 online quizzes worth 30% (one quiz every two weeks) 2 10 annotations worth 10% (one annotation per week) 1 final quiz worth 40%      Starting week 4.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
+      <description>Probability  Essential assessment details  100% coursework  4 hand-ins worth 20% (one hand-in every two weeks) 1 5 online quizzes worth 30% (one quiz every two weeks) 2 10 annotations worth 10% (one annotation per week) 1 final quiz worth 40%      Starting week 4.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
  Starting week 3.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
    </description>
     </item>
@@ -37,8 +46,17 @@ The unit vector $\hat{x}$ is the vector pointing in the direction of $\vec{x} \i
       <pubDate>Mon, 20 Sep 2021 13:30:01 +0100</pubDate>
       
       <guid>/course-notes/ug2/svcde/assessment/</guid>
-      <description>Essential assessment details  60% exam  online, open-book, 2 hours long end of semester 1   40% coursework  10 online quizzes worth 25% (one quiz per week) 1 10 hand-ins worth 15% (one hand-in per week) 1      9 best count.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
+      <description>Several Variable Calculus and Differential Equations  Essential assessment details  60% exam  online, open-book, 2 hours long end of semester 1   40% coursework  10 online quizzes worth 25% (one quiz per week) 1 10 hand-ins worth 15% (one hand-in per week) 1      9 best count.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
    </description>
+    </item>
+    
+    <item>
+      <title>Links</title>
+      <link>/course-notes/ug2/iads/links/</link>
+      <pubDate>Mon, 20 Sep 2021 13:29:55 +0100</pubDate>
+      
+      <guid>/course-notes/ug2/iads/links/</guid>
+      <description>Introduction to Algorithms and Data Structures  Relevant links I&amp;rsquo;ve found useful throughout the course  None yet!  </description>
     </item>
     
     <item>
@@ -47,7 +65,7 @@ The unit vector $\hat{x}$ is the vector pointing in the direction of $\vec{x} \i
       <pubDate>Mon, 20 Sep 2021 13:29:55 +0100</pubDate>
       
       <guid>/course-notes/ug2/probability/links/</guid>
-      <description>Relevant links I&amp;rsquo;ve found useful throughout the course </description>
+      <description>Probability  Relevant links I&amp;rsquo;ve found useful throughout the course None yet!</description>
     </item>
     
     <item>
@@ -56,8 +74,17 @@ The unit vector $\hat{x}$ is the vector pointing in the direction of $\vec{x} \i
       <pubDate>Mon, 20 Sep 2021 13:29:55 +0100</pubDate>
       
       <guid>/course-notes/ug2/svcde/links/</guid>
-      <description>Relevant links I&amp;rsquo;ve found useful throughout the course  Lectures + Revision 1    Requires enrolment on the course.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
+      <description>Several Variable Calculus and Differential Equations  Relevant links I&amp;rsquo;ve found useful throughout the course  Lectures + Revision 1    Requires enrolment on the course.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
    </description>
+    </item>
+    
+    <item>
+      <title>Timings</title>
+      <link>/course-notes/ug2/iads/timings/</link>
+      <pubDate>Mon, 20 Sep 2021 13:29:49 +0100</pubDate>
+      
+      <guid>/course-notes/ug2/iads/timings/</guid>
+      <description>Introduction to Algorithms and Data Structures  Deadlines to learn by heart    Assignment Set Due Extensions?     Coursework #1 29/10 12/11 @ 4pm. 1 Rule 3 of the LSC Policy   Coursework #2 04/02 18/02 @ 4pm. 2 idem.   Coursework #3 08/03 22/03 @ 4pm. 3 idem.   Quizzes Fri. 4 Wed. @ 4pm. 5 no    The exam will be sat during the Semester 2 exam diet (April/May).</description>
     </item>
     
     <item>
@@ -66,7 +93,7 @@ The unit vector $\hat{x}$ is the vector pointing in the direction of $\vec{x} \i
       <pubDate>Mon, 20 Sep 2021 13:29:49 +0100</pubDate>
       
       <guid>/course-notes/ug2/probability/timings/</guid>
-      <description>Deadlines to learn by heart  Every piece of assessment is due at 16:00 BST. Annotations  due every week on Tuesday   Hand-ins  due weeks 4, 6, 8, 10 on Wednesday   Online quizzes  due weeks 3, 5, 7, 9, 11 on Wednesday   Final quiz  due on 17/12/2021 (Friday)  7 day extensions permitted – apply via the ESC online system      Timetable     Monday Tuesday Wednesday Thursday Friday     var.</description>
+      <description>Probability  Deadlines to learn by heart  Every piece of assessment is due at 16:00 BST. Annotations  due every week on Tuesday   Hand-ins  due weeks 4, 6, 8, 10 on Wednesday   Online quizzes  due weeks 3, 5, 7, 9, 11 on Wednesday   Final quiz  due on 17/12/2021 (Friday)  7 day extensions permitted – apply via the ESC online system      Timetable     Monday Tuesday Wednesday Thursday Friday     var.</description>
     </item>
     
     <item>
@@ -75,7 +102,16 @@ The unit vector $\hat{x}$ is the vector pointing in the direction of $\vec{x} \i
       <pubDate>Mon, 20 Sep 2021 13:29:49 +0100</pubDate>
       
       <guid>/course-notes/ug2/svcde/timings/</guid>
-      <description>Deadlines to learn by heart  Online quizzes  set on Friday due on Friday at 11:00 am  no extensions or exemptions no late submissions     Hand-ins  set on Friday due on Friday at 11:00 am  no extensions or exemptions no late submissions      Timetable     Monday Tuesday Wednesday Thursday Friday     5pm. Q&amp;amp;A var.</description>
+      <description>Several Variable Calculus and Differential Equations  Deadlines to learn by heart  Online quizzes  set on Friday due on Friday at 11:00 am  no extensions or exemptions no late submissions     Hand-ins  set on Friday due on Friday at 11:00 am  no extensions or exemptions no late submissions      Timetable     Monday Tuesday Wednesday Thursday Friday     5pm.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Algorithms and Data Structures</title>
+      <link>/course-notes/ug2/iads/</link>
+      <pubDate>Mon, 20 Sep 2021 10:57:26 +0100</pubDate>
+      
+      <guid>/course-notes/ug2/iads/</guid>
+      <description>Introduction to Algorithms and Data Structures  Admin  Timetable &amp;amp; deadlines Handy links Assessment  Notes  Week 1 &amp;ndash; Definitions and Toy Examples for A &amp;amp; DS  </description>
     </item>
     
     <item>
