@@ -9,14 +9,15 @@
     <copyright>Copyright © 2021, Andi Dicu.</copyright>
     <lastBuildDate>Mon, 16 Aug 2021 14:25:44 +0300</lastBuildDate><atom:link href="/course-notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Week1</title>
+      <title>SVCDE Week 1</title>
       <link>/course-notes/ug2/svcde/week1/</link>
       <pubDate>Mon, 20 Sep 2021 13:30:30 +0100</pubDate>
       
       <guid>/course-notes/ug2/svcde/week1/</guid>
-      <description>Week 1 – Vectors &amp;amp; Vector Functions  1.1 Basic properties The dot product Let&amp;rsquo;s think about a very general $\vec{x}\cdot \vec{y}$, where $\vec{x}, \vec{y} \in \mathbb{R}^n$. We are taught two different ways (or, more precisely, two different definitions) for how to go about computing this dot product:
-1. Algebraic $$\vec{x} \cdot \vec{y} = \Vector{x_1 \\ .. \\ x_n} \cdot \Vector{y_1 \\ .. \\ y_n} = \sum_{k=1}^n x_ky_k$$
-Which is a pretty straight-forward and extremely convenient entry-wise sum of products.</description>
+      <description>SVCDE Week 1 – Vectors &amp;amp; Vector Functions  1.1 Basic properties The magnitude of a vector $\vec{x} = \Vector{x_1 \\ x_2 \\ .. \\ x_n} \in \mathbb{R}^n$ is
+$$|\vec{x}| = \sqrt{\sum_{k=1}^n x_k^2}$$
+Geometrically, this represents the distance of the vector&amp;rsquo;s tip from the origin and follows from the generalised Pythagoras&#39;.
+The unit vector $\hat{x}$ is the vector pointing in the direction of $\vec{x} \in \mathbb{R}^n$ of magnitude 1. So,</description>
     </item>
     
     <item>
