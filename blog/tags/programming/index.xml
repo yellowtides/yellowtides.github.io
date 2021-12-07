@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>programming on Maths. CompSci. Study notes.</title>
+    <link>https://yellowtid.es/blog/tags/programming/</link>
+    <description>Recent content in programming on Maths. CompSci. Study notes.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>Copyright © 2021, Andi Dicu.</copyright>
+    <lastBuildDate>Tue, 07 Dec 2021 06:16:13 +0000</lastBuildDate><atom:link href="https://yellowtid.es/blog/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advent of Code 2021, Day 7: Minimising MSE &#43; AAD</title>
+      <link>https://yellowtid.es/blog/posts/advent-of-code-2021-day-7-minimising-mse-aad/</link>
+      <pubDate>Tue, 07 Dec 2021 06:16:13 +0000</pubDate>
+      
+      <guid>https://yellowtid.es/blog/posts/advent-of-code-2021-day-7-minimising-mse-aad/</guid>
+      <description>The problem at hand It is the 7th day of the 2021 Advent of Code programming challenge! We are given a dataset of $n$ points $X = (x_1, x_2, &amp;hellip;, x_n) \in \mathbb{Z}^n$, and are asked to find $$\gamma = \text{argmin}_{x\in\mathbb{R}} \sum_{i=1}^n \text{dist}&#39;(x,\, x_i),$$ or, in other words, the value of $x \in \mathbb{R}$ that minimises the total sum of a distance function from it to all datapoints $$\text{dist}&#39;(x,\, x_i) = 1 + 2 + &amp;hellip; + |x-x_i| = \frac{1}{2}|x-x_i|\left(|x-x_i|+1\right).</description>
+    </item>
+    
+  </channel>
+</rss>

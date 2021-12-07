@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Advent of Code 2021, Day 7: Minimising MSE &#43; AAD λ yellowtid.es</title>
+<meta name="title" content="Advent of Code 2021, Day 7: Minimising MSE &#43; AAD" />
+<meta name="description" content="The problem at hand It is the 7th day of the 2021 Advent of Code programming challenge! We are given a dataset of $n$ points $X = (x_1, x_2, &hellip;, x_n) \in \mathbb{Z}^n$, and are asked to find $$\gamma = \text{argmin}_{x\in\mathbb{R}} \sum_{i=1}^n \text{dist}&#39;(x,\, x_i),$$ or, in other words, the value of $x \in \mathbb{R}$ that minimises the total sum of a distance function from it to all datapoints $$\text{dist}&#39;(x,\, x_i) = 1 &#43; 2 &#43; &hellip; &#43; |x-x_i| = \frac{1}{2}|x-x_i|\left(|x-x_i|&#43;1\right)." />
+<meta name="keywords" content="maths,programming,proofs,statistics," />
+
+
+<meta property="og:title" content="Advent of Code 2021, Day 7: Minimising MSE &#43; AAD" />
+<meta property="og:description" content="The problem at hand It is the 7th day of the 2021 Advent of Code programming challenge! We are given a dataset of $n$ points $X = (x_1, x_2, &hellip;, x_n) \in \mathbb{Z}^n$, and are asked to find $$\gamma = \text{argmin}_{x\in\mathbb{R}} \sum_{i=1}^n \text{dist}&#39;(x,\, x_i),$$ or, in other words, the value of $x \in \mathbb{R}$ that minimises the total sum of a distance function from it to all datapoints $$\text{dist}&#39;(x,\, x_i) = 1 &#43; 2 &#43; &hellip; &#43; |x-x_i| = \frac{1}{2}|x-x_i|\left(|x-x_i|&#43;1\right)." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yellowtid.es/blog/posts/advent-of-code-2021-day-7-minimising-mse-aad/" /><meta property="og:image" content="https://yellowtid.es/images/share.png"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2021-12-07T06:16:13+00:00" />
+<meta property="article:modified_time" content="2021-12-07T06:16:13+00:00" /><meta property="og:site_name" content="Maths. CompSci. Study notes." />
+
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://yellowtid.es/images/share.png"/>
+
+<meta name="twitter:title" content="Advent of Code 2021, Day 7: Minimising MSE &#43; AAD"/>
+<meta name="twitter:description" content="The problem at hand It is the 7th day of the 2021 Advent of Code programming challenge! We are given a dataset of $n$ points $X = (x_1, x_2, &hellip;, x_n) \in \mathbb{Z}^n$, and are asked to find $$\gamma = \text{argmin}_{x\in\mathbb{R}} \sum_{i=1}^n \text{dist}&#39;(x,\, x_i),$$ or, in other words, the value of $x \in \mathbb{R}$ that minimises the total sum of a distance function from it to all datapoints $$\text{dist}&#39;(x,\, x_i) = 1 &#43; 2 &#43; &hellip; &#43; |x-x_i| = \frac{1}{2}|x-x_i|\left(|x-x_i|&#43;1\right)."/>
+
+
+
+<meta itemprop="name" content="Advent of Code 2021, Day 7: Minimising MSE &#43; AAD">
+<meta itemprop="description" content="The problem at hand It is the 7th day of the 2021 Advent of Code programming challenge! We are given a dataset of $n$ points $X = (x_1, x_2, &hellip;, x_n) \in \mathbb{Z}^n$, and are asked to find $$\gamma = \text{argmin}_{x\in\mathbb{R}} \sum_{i=1}^n \text{dist}&#39;(x,\, x_i),$$ or, in other words, the value of $x \in \mathbb{R}$ that minimises the total sum of a distance function from it to all datapoints $$\text{dist}&#39;(x,\, x_i) = 1 &#43; 2 &#43; &hellip; &#43; |x-x_i| = \frac{1}{2}|x-x_i|\left(|x-x_i|&#43;1\right)."><meta itemprop="datePublished" content="2021-12-07T06:16:13+00:00" />
+<meta itemprop="dateModified" content="2021-12-07T06:16:13+00:00" />
+<meta itemprop="wordCount" content="575"><meta itemprop="image" content="https://yellowtid.es/images/share.png"/>
+<meta itemprop="keywords" content="maths,programming,proofs,statistics," />
+<meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <style>
+  body {
+    font-family: Verdana, sans-serif;
+    margin: auto;
+    padding: 20px;
+    max-width: 720px;
+    text-align: left;
+    background-color: #fff;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: #444;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  strong,
+  b {
+    color: #222;
+  }
+
+  a {
+    color: #3273dc;
+     
+  }
+
+  .title {
+    text-decoration: none;
+    border: 0;
+  }
+
+  .title span {
+    font-weight: 400;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  content {
+    line-height: 1.6;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 5px;
+    background-color: #f2f2f2;
+  }
+
+  pre code {
+    color: #222;
+    display: block;
+    padding: 20px;
+    white-space: pre-wrap;
+    font-size: 14px;
+  }
+
+  div.highlight pre {
+    background-color: initial;
+    color: initial;
+  }
+
+  div.highlight code {
+    background-color: unset;
+    color: unset;
+  }
+
+  blockquote {
+    border-left: 1px solid #999;
+    color: #222;
+    padding-left: 20px;
+    font-style: italic;
+  }
+
+  footer {
+    padding: 25px;
+    text-align: center;
+  }
+
+  .helptext {
+    color: #777;
+    font-size: small;
+  }
+
+  .errorlist {
+    color: #eba613;
+    font-size: small;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: #8b6fcb;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: #333;
+      color: #ddd;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    strong,
+    b {
+      color: #eee;
+    }
+
+    a {
+      color: #8cc2dd;
+    }
+
+    code {
+      background-color: #262626;
+    }
+
+    pre code {
+      color: #ddd;
+    }
+
+    blockquote {
+      color: #ccc;
+    }
+
+    textarea,
+    input {
+      background-color: #252525;
+      color: #ddd;
+    }
+
+    .helptext {
+      color: #aaa;
+    }
+  }
+
+  code.has-jax {
+    -webkit-font-smoothing: antialiased;
+    background: inherit !important;
+    border: none !important;
+    font-size: 100%;
+  }
+
+</style>
+
+
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body>
+  <header><a href="/" class="title">
+  <h2>Maths. CompSci. Study notes.</h2>
+</a>
+<nav><a href="/">Home</a>
+
+<a href="/course-notes/">Course notes</a>
+
+<a href="/self-study-notes/">Self-study notes</a>
+
+<a href="/write-ups/">Write-ups</a>
+
+
+<a href="/blog">Blog</a>
+
+</nav>
+</header>
+  <main>
+    
+      
+        
+
+<h1>Advent of Code 2021, Day 7: Minimising MSE &#43; AAD</h1>
+<p>
+  <i>
+    <time datetime='2021-12-07' pubdate>
+      07 Dec, 2021
+    </time>
+  </i>
+</p>
+
+<content>
+  <h2 id="the-problem-at-hand">The problem at hand</h2>
+<p>It is the <a href="https://adventofcode.com/2021/day/7">7th day of the 2021 Advent of Code programming challenge</a>! We are given a dataset of $n$ points $X = (x_1, x_2, &hellip;, x_n) \in \mathbb{Z}^n$, and are asked to find
+$$\gamma = \text{argmin}_{x\in\mathbb{R}} \sum_{i=1}^n \text{dist}'(x,\, x_i),$$
+or, in other words, the value of $x \in \mathbb{R}$ that minimises the total sum of a distance function from it to all datapoints
+$$\text{dist}'(x,\, x_i) = 1 + 2 + &hellip; + |x-x_i| = \frac{1}{2}|x-x_i|\left(|x-x_i|+1\right).$$</p>
+<p>Substituting, we see that what we wish to find is actually <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
+$$\gamma = \text{argmin}_{x\in\mathbb{R}} \frac{1}{2}\sum_{i=1}^n |x-x_i|\left(|x-x_i|+1\right).$$</p>
+<h2 id="initial-manipulation">Initial manipulation</h2>
+<p>Note that, to simplify things, we can equivalently view the problem as wanting to find the global minimum to a function $f : \mathbb{R} \rightarrow \mathbb{R}$ defined as
+$$f(x) = \sum |x-x_i|\left(|x-x_i|+1\right) = \sum (x-x_i)^2 + \sum |x-x_i|.$$</p>
+<p>This is further equivalent to wanting to minimise
+$$g(x) = \frac{1}{n}f(x) = \frac{1}{n}\sum (x-x_i)^2 + \frac{1}{n}\sum |x-x_i| = MSE + AAD,$$</p>
+<p>since $\frac{1}{n}$ is just a constant factor! MSE is the <a href="https://en.wikipedia.org/wiki/Mean_squared_error">mean squared error</a> usually found in linear regressions, and AAD is the less commonly known <a href="https://en.wikipedia.org/wiki/Average_absolute_deviation">average absolute deviation</a>.</p>
+<p>So really, the problem we are given is no different than that of finding the value that minimises the sum of the MSE and the AAD for a given dataset!</p>
+<h2 id="solution">Solution</h2>
+<blockquote>
+<p>It is a well-known fact that the value that minimises the MSE of a dataset is the mean, and that the value that minimises the AAD for a dataset is the median. But what about their sum? Is it the mean? The median? Can it even be efficiently computed?</p>
+</blockquote>
+<p>To answer this, let&rsquo;s define some useful values first. Let $\mu_x = \frac{1}{n}{\sum_{i=1}^n x_i}$ be the mean of the given dataset, and let $\sigma_x^2 = \frac{1}{n}\sum_{i=1}^n(x_i-\mu_x)^2$ be its variance. Also remember that $\frac{d}{dx}|x| = \text{sgn}(x)$, where
+$$\text{sgn}(x) = \begin{cases}
+-1, &amp; x &lt; 0 \\<br>
+0, &amp; x = 0\\<br>
+1, &amp; x &gt; 0
+\end{cases}$$ is the sign of $x \in \mathbb{R}$.</p>
+<hr>
+<p>$\text{Claim.}$ The value $\gamma$ that minimises MSE + AAD must satisfy $\gamma \in [\mu_x - 0.5, \mu_x + 0.5]$.</p>
+<p>$\text{Proof}.$ To find the global minimum of $g \geq 0$, we first take its derivative:
+$$
+\begin{align*}
+g'(x) &amp;= \left(\frac{1}{n}\sum_{i=1}^n(x-x_i)^2 + \frac{1}{n}\sum_{i=1}^n|x-x_i|\right)' \\<br>
+&amp;= \frac{2}{n}\sum_{i=1}^n (x-x_i)+\frac{1}{n}\sum_{i=1}^n\text{ sgn}(x-x_i) \\<br>
+&amp;= 2x-\frac{2}{n}\sum_{i=1}^n x_i+\frac{1}{n}\sum_{i=1}^n\text{ sgn}(x-x_i) \\<br>
+&amp;= 2x - 2\mu_x + \frac{1}{n}\sum_{i=1}^n \text{ sgn}(x-x_i).
+\end{align*}
+$$
+Therefore, we know that the global minimum $\gamma$ must satisfy
+$$g'(\gamma) = 0 = 2\gamma - 2\mu_x + \frac{1}{n}\sum_{i=1}^n \text{sgn}(\gamma-x_i),$$
+or, in other words,
+$$\begin{equation}
+\tag{1}
+\gamma = \mu_x - \frac{1}{2}\cdot\frac{1}{n}\sum_{i=1}^n\text{ sgn}(\gamma - x_i).
+\end{equation}$$</p>
+<p>Note however that $\forall i : -1 \leq \text{sgn}(\gamma - x_i) \leq 1$, and so
+$$-n \leq \sum_{i=1}^n\text{sgn}(\gamma - x_i) \leq n.$$
+Plugging this in $(1)$, we finally obtain the relation
+$$\mu_x - 0.5 \leq \gamma \leq \mu_x + 0.5.$$
+$$\tag*{$\blacksquare$}$$</p>
+<hr>
+<p>Therefore, the value in $\mathbb{R}$ that minimises MSE + AAD is always within $0.5$ of the dataset mean! To find the value in $\mathbb{Z}$ that minimises MSE + AAD (which is really what the problem was asking in the first place), it should be enough to only consider two values: $\lfloor\mu_x\rfloor$, and $\lceil \mu_x \rceil$.</p>
+<p>Compare the $AAD + MSE$ for both of the two, and choose the one that minimises it!</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>What the problem really asks us to find is the minimum over $\mathbb{Z}$ (which is why $\text{dist}'$ is well-defined in the first place), but for analytical purposes it is useful to consider this minimum over $\mathbb{R}$.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+</content>
+<p>
+  
+  <a href="https://yellowtid.es/blog/tags/maths/">#maths</a>
+  
+  <a href="https://yellowtid.es/blog/tags/programming/">#programming</a>
+  
+  <a href="https://yellowtid.es/blog/tags/proofs/">#proofs</a>
+  
+  <a href="https://yellowtid.es/blog/tags/statistics/">#statistics</a>
+  
+</p>
+
+      
+    
+  </main>
+  <footer>
+</footer>
+
+    
+</body>
+
+</html>

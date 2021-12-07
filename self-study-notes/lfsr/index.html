@@ -18,7 +18,7 @@
  In spite of their many aforementioned practical qualities they are, however, definitely not well known for their cryptographic strength.
  But let&rsquo;s take things one at a time." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/self-study-notes/lfsr/" /><meta property="og:image" content="images/share.png"/><meta property="article:section" content="self-study-notes" />
+<meta property="og:url" content="https://yellowtid.es/self-study-notes/lfsr/" /><meta property="og:image" content="https://yellowtid.es/images/share.png"/><meta property="article:section" content="self-study-notes" />
 <meta property="article:published_time" content="2021-08-17T23:54:51+03:00" />
 <meta property="article:modified_time" content="2021-08-17T23:54:51+03:00" /><meta property="og:site_name" content="Maths. CompSci. Study notes." />
 
@@ -26,7 +26,7 @@
 
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="images/share.png"/>
+<meta name="twitter:image" content="https://yellowtid.es/images/share.png"/>
 
 <meta name="twitter:title" content="LFSRs"/>
 <meta name="twitter:description" content="First, a primer The LFSRs (Linear Feedback Shift Registers) represent a family of very low-level, simple to implement, and darn quick ways of generating seemingly random sequences of bits. It is no surprise then that they are often used as PRNGs (pseudo-random number generators).
@@ -40,7 +40,7 @@
  In spite of their many aforementioned practical qualities they are, however, definitely not well known for their cryptographic strength.
  But let&rsquo;s take things one at a time."><meta itemprop="datePublished" content="2021-08-17T23:54:51+03:00" />
 <meta itemprop="dateModified" content="2021-08-17T23:54:51+03:00" />
-<meta itemprop="wordCount" content="246"><meta itemprop="image" content="images/share.png"/>
+<meta itemprop="wordCount" content="246"><meta itemprop="image" content="https://yellowtid.es/images/share.png"/>
 <meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -227,16 +227,11 @@
 
   <script>
   MathJax = {
-    loader: {load: ['[tex]/configmacros']},
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
       displayMath: [['$$','$$'], ['\\[', '\\]']],
       processEscapes: true,
-      processEnvironments: true,
-      packages: {'[+]': ['configmacros']},
-      macros: {
-          Vector: ['\\begin{bmatrix} #1 \\end{bmatrix}', 1]
-      }
+      processEnvironments: true
     },
     options: {
       skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
@@ -244,10 +239,9 @@
   };
 
   window.addEventListener('load', (event) => {
-    document.querySelectorAll("mjx-container").forEach(function(x){
-    x.parentElement.classList += 'has-jax'})
-  });
-
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
 
 </script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -257,24 +251,26 @@
 </head>
 
 <body>
-  <header><a href="../../" class="title">
+  <header><a href="/" class="title">
   <h2>Maths. CompSci. Study notes.</h2>
 </a>
-<nav><a href="../../">Home</a>
+<nav><a href="/">Home</a>
 
-<a href="../../course-notes/">Course notes</a>
+<a href="/course-notes/">Course notes</a>
 
-<a href="../../self-study-notes/">Self-study notes</a>
+<a href="/self-study-notes/">Self-study notes</a>
 
-<a href="../../write-ups/">Write-ups</a>
+<a href="/write-ups/">Write-ups</a>
 
 
-<a href="../../blog">Blog</a>
+<a href="/blog">Blog</a>
 
 </nav>
 </header>
   <main>
     
+      
+        
 
 <content>
   <h2 id="first-a-primer">First, a primer</h2>
@@ -300,8 +296,12 @@
 <p>$$\forall L : \exists ord(L) \in (0, 2^n) : L_{ord(L)} = L_{0}.$$</p>
 
 </content>
+<p>
+  
+</p>
 
-
+      
+    
   </main>
   <footer>
 </footer>

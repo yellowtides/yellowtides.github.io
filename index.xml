@@ -2,202 +2,145 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Maths. CompSci. Study notes.</title>
-    <link>/</link>
+    <link>https://yellowtid.es/</link>
     <description>Recent content on Maths. CompSci. Study notes.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2021, Andi Dicu.</copyright>
-    <lastBuildDate>Mon, 20 Sep 2021 13:30:30 +0100</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Dec 2021 06:16:13 +0000</lastBuildDate><atom:link href="https://yellowtid.es/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>SVCDE Week 1</title>
-      <link>/course-notes/ug2/svcde/week1/</link>
-      <pubDate>Mon, 20 Sep 2021 13:30:30 +0100</pubDate>
+      <title>Advent of Code 2021, Day 7: Minimising MSE &#43; AAD</title>
+      <link>https://yellowtid.es/blog/posts/advent-of-code-2021-day-7-minimising-mse-aad/</link>
+      <pubDate>Tue, 07 Dec 2021 06:16:13 +0000</pubDate>
       
-      <guid>/course-notes/ug2/svcde/week1/</guid>
-      <description>SVCDE Week 1 – Vectors &amp;amp; Vector Functions  1.1 Basic properties The magnitude of a vector $\vec{x} = \Vector{x_1 \\ x_2 \\ .. \\ x_n} \in \mathbb{R}^n$ is
-$$|\vec{x}| = \sqrt{\sum_{k=1}^n x_k^2}$$
-Geometrically, this represents the distance to the vector&amp;rsquo;s tip from the origin and follows from generalised Pythagoras&#39;.
-The unit vector $\hat{x}$ is the vector pointing in the direction of $\vec{x} \in \mathbb{R}^n$ of magnitude 1. So,
-$$\hat{x} = \frac{1}{|\vec{x}|}\vec{x}.</description>
+      <guid>https://yellowtid.es/blog/posts/advent-of-code-2021-day-7-minimising-mse-aad/</guid>
+      <description>The problem at hand It is the 7th day of the 2021 Advent of Code programming challenge! We are given a dataset of $n$ points $X = (x_1, x_2, &amp;hellip;, x_n) \in \mathbb{Z}^n$, and are asked to find $$\gamma = \text{argmin}_{x\in\mathbb{R}} \sum_{i=1}^n \text{dist}&#39;(x,\, x_i),$$ or, in other words, the value of $x \in \mathbb{R}$ that minimises the total sum of a distance function from it to all datapoints $$\text{dist}&#39;(x,\, x_i) = 1 + 2 + &amp;hellip; + |x-x_i| = \frac{1}{2}|x-x_i|\left(|x-x_i|+1\right).</description>
     </item>
     
     <item>
       <title>Assessment</title>
-      <link>/course-notes/ug2/fds/assessment/</link>
+      <link>https://yellowtid.es/course-notes/ug2/probability/assessment/</link>
       <pubDate>Mon, 20 Sep 2021 13:30:01 +0100</pubDate>
       
-      <guid>/course-notes/ug2/fds/assessment/</guid>
-      <description>Foundations of Data Science  Essential assessment details  100% coursework  2 major courseworks worth 20% each, split 1-1 over the two semesters 2 class tests worth 10% each, at the end of each semester 1 huge project worth 40% in the second half of semester 2    </description>
-    </item>
-    
-    <item>
-      <title>Assessment</title>
-      <link>/course-notes/ug2/iads/assessment/</link>
-      <pubDate>Mon, 20 Sep 2021 13:30:01 +0100</pubDate>
-      
-      <guid>/course-notes/ug2/iads/assessment/</guid>
-      <description>Introduction to Algorithms and Data Structures  Essential assessment details  60% exam  two parts:  Part A. 5 compulsory questions worth 10 marks each Part B. choice of 2/3 questions worth 25 marks each   semester 2 diet (April/May)   40% coursework  3 major courseworks worth 10% each, split 1-2 over the two semesters 6 multiple-choice quizzes worth 2% each 1  5-day window to complete them; time limit of one hour 3 per semester instant feedback        First one is for practice and does not count.</description>
-    </item>
-    
-    <item>
-      <title>Assessment</title>
-      <link>/course-notes/ug2/probability/assessment/</link>
-      <pubDate>Mon, 20 Sep 2021 13:30:01 +0100</pubDate>
-      
-      <guid>/course-notes/ug2/probability/assessment/</guid>
-      <description>Probability  Essential assessment details  100% coursework  4 hand-ins worth 20% (one hand-in every two weeks) 1 5 online quizzes worth 30% (one quiz every two weeks) 2 10 annotations worth 10% (one annotation per week) 1 final quiz worth 40%      Starting week 4.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
+      <guid>https://yellowtid.es/course-notes/ug2/probability/assessment/</guid>
+      <description>Essential assessment details  100% coursework  4 hand-ins worth 20% (one hand-in every two weeks) 1 5 online quizzes worth 30% (one quiz every two weeks) 2 10 annotations worth 10% (one annotation per week) 1 final quiz worth 40%      Starting week 4.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
  Starting week 3.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
    </description>
     </item>
     
     <item>
       <title>Assessment</title>
-      <link>/course-notes/ug2/svcde/assessment/</link>
+      <link>https://yellowtid.es/course-notes/ug2/svcde/assessment/</link>
       <pubDate>Mon, 20 Sep 2021 13:30:01 +0100</pubDate>
       
-      <guid>/course-notes/ug2/svcde/assessment/</guid>
-      <description>Several Variable Calculus and Differential Equations  Essential assessment details  60% exam  online, open-book, 2 hours long end of semester 1   40% coursework  10 online quizzes worth 25% (one quiz per week) 1 10 hand-ins worth 15% (one hand-in per week) 1      9 best count.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
+      <guid>https://yellowtid.es/course-notes/ug2/svcde/assessment/</guid>
+      <description>Essential assessment details  60% exam  online, open-book, 2 hours long end of semester 1   40% coursework  10 online quizzes worth 25% (one quiz per week) 1 10 hand-ins worth 15% (one hand-in per week) 1      9 best count.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
    </description>
     </item>
     
     <item>
       <title>Links</title>
-      <link>/course-notes/ug2/fds/links/</link>
+      <link>https://yellowtid.es/course-notes/ug2/probability/links/</link>
       <pubDate>Mon, 20 Sep 2021 13:29:55 +0100</pubDate>
       
-      <guid>/course-notes/ug2/fds/links/</guid>
-      <description>Foundations of Data Science  Relevant links I&amp;rsquo;ve found useful throughout the course  None yet!  </description>
+      <guid>https://yellowtid.es/course-notes/ug2/probability/links/</guid>
+      <description>Relevant links I&amp;rsquo;ve found useful throughout the course </description>
     </item>
     
     <item>
       <title>Links</title>
-      <link>/course-notes/ug2/iads/links/</link>
+      <link>https://yellowtid.es/course-notes/ug2/svcde/links/</link>
       <pubDate>Mon, 20 Sep 2021 13:29:55 +0100</pubDate>
       
-      <guid>/course-notes/ug2/iads/links/</guid>
-      <description>Introduction to Algorithms and Data Structures  Relevant links I&amp;rsquo;ve found useful throughout the course  None yet!  </description>
-    </item>
-    
-    <item>
-      <title>Links</title>
-      <link>/course-notes/ug2/probability/links/</link>
-      <pubDate>Mon, 20 Sep 2021 13:29:55 +0100</pubDate>
-      
-      <guid>/course-notes/ug2/probability/links/</guid>
-      <description>Probability  Relevant links I&amp;rsquo;ve found useful throughout the course None yet!</description>
-    </item>
-    
-    <item>
-      <title>Links</title>
-      <link>/course-notes/ug2/svcde/links/</link>
-      <pubDate>Mon, 20 Sep 2021 13:29:55 +0100</pubDate>
-      
-      <guid>/course-notes/ug2/svcde/links/</guid>
-      <description>Several Variable Calculus and Differential Equations  Relevant links I&amp;rsquo;ve found useful throughout the course  Lectures + Revision 1    Requires enrolment on the course.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
+      <guid>https://yellowtid.es/course-notes/ug2/svcde/links/</guid>
+      <description>Relevant links I&amp;rsquo;ve found useful throughout the course  Lectures + Revision 1    Requires enrolment on the course.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
    </description>
     </item>
     
     <item>
       <title>Timings</title>
-      <link>/course-notes/ug2/fds/timings/</link>
+      <link>https://yellowtid.es/course-notes/ug2/probability/timings/</link>
       <pubDate>Mon, 20 Sep 2021 13:29:49 +0100</pubDate>
       
-      <guid>/course-notes/ug2/fds/timings/</guid>
-      <description>Foundations of Data Science  Deadlines to learn by heart    Assignment Set Due Extensions?     Coursework #1 25/10 01/11 @ 4pm. Rule 3 of the LSC Policy   Coursework #2 17/01 02/02 @ 4pm. idem.   Project 07/03 05/04 @ 4pm. idem.   Class test #1 TBA	1 TBA 1 no   Class test #2 TBA 2 TBA 2 idem.    Timetable &amp;ndash; Semester 1     Monday Tuesday Wednesday Thursday Friday     12am.</description>
+      <guid>https://yellowtid.es/course-notes/ug2/probability/timings/</guid>
+      <description>Deadlines to learn by heart  Every piece of assessment is due at 16:00 BST. Annotations  due every week on Tuesday   Hand-ins  due weeks 4, 6, 8, 10 on Wednesday   Online quizzes  due weeks 3, 5, 7, 9, 11 on Wednesday   Final quiz  due on 17/12/2021 (Friday)  7 day extensions permitted – apply via the ESC online system      Timetable     Monday Tuesday Wednesday Thursday Friday     var.</description>
     </item>
     
     <item>
       <title>Timings</title>
-      <link>/course-notes/ug2/iads/timings/</link>
+      <link>https://yellowtid.es/course-notes/ug2/svcde/timings/</link>
       <pubDate>Mon, 20 Sep 2021 13:29:49 +0100</pubDate>
       
-      <guid>/course-notes/ug2/iads/timings/</guid>
-      <description>Introduction to Algorithms and Data Structures  Deadlines to learn by heart    Assignment Set Due Extensions?     Coursework #1 29/10 12/11 @ 4pm. 1 Rule 3 of the LSC Policy   Coursework #2 04/02 18/02 @ 4pm. 2 idem.   Coursework #3 08/03 22/03 @ 4pm. 3 idem.   Quizzes Fri. 4 Wed. @ 4pm. 5 no    The exam will be sat during the Semester 2 exam diet (April/May).</description>
-    </item>
-    
-    <item>
-      <title>Timings</title>
-      <link>/course-notes/ug2/probability/timings/</link>
-      <pubDate>Mon, 20 Sep 2021 13:29:49 +0100</pubDate>
-      
-      <guid>/course-notes/ug2/probability/timings/</guid>
-      <description>Probability  Deadlines to learn by heart  Every piece of assessment is due at 16:00 BST. Annotations  due every week on Tuesday   Hand-ins  due weeks 4, 6, 8, 10 on Wednesday   Online quizzes  due weeks 3, 5, 7, 9, 11 on Wednesday   Final quiz  due on 17/12/2021 (Friday)  7 day extensions permitted – apply via the ESC online system      Timetable     Monday Tuesday Wednesday Thursday Friday     var.</description>
-    </item>
-    
-    <item>
-      <title>Timings</title>
-      <link>/course-notes/ug2/svcde/timings/</link>
-      <pubDate>Mon, 20 Sep 2021 13:29:49 +0100</pubDate>
-      
-      <guid>/course-notes/ug2/svcde/timings/</guid>
-      <description>Several Variable Calculus and Differential Equations  Deadlines to learn by heart  Online quizzes  set on Friday due on Friday at 11:00 am  no extensions or exemptions no late submissions     Hand-ins  set on Friday due on Friday at 11:00 am  no extensions or exemptions no late submissions      Timetable     Monday Tuesday Wednesday Thursday Friday     5pm.</description>
-    </item>
-    
-    <item>
-      <title>Foundations of Data Science</title>
-      <link>/course-notes/ug2/fds/</link>
-      <pubDate>Mon, 20 Sep 2021 10:57:26 +0100</pubDate>
-      
-      <guid>/course-notes/ug2/fds/</guid>
-      <description>Foundations of Data Science  Admin  Timetable &amp;amp; deadlines Handy links Assessment  Notes  Week 1 &amp;ndash; Introduction to Python Pandas  </description>
-    </item>
-    
-    <item>
-      <title>Introduction to Algorithms and Data Structures</title>
-      <link>/course-notes/ug2/iads/</link>
-      <pubDate>Mon, 20 Sep 2021 10:57:26 +0100</pubDate>
-      
-      <guid>/course-notes/ug2/iads/</guid>
-      <description>Introduction to Algorithms and Data Structures  Admin  Timetable &amp;amp; deadlines Handy links Assessment  Notes  Week 1 &amp;ndash; Definitions and Toy Examples for A &amp;amp; DS  </description>
+      <guid>https://yellowtid.es/course-notes/ug2/svcde/timings/</guid>
+      <description>Deadlines to learn by heart  Online quizzes  set on Friday due on Friday at 11:00 am  no extensions or exemptions no late submissions     Hand-ins  set on Friday due on Friday at 11:00 am  no extensions or exemptions no late submissions      Timetable     Monday Tuesday Wednesday Thursday Friday     5pm. Q&amp;amp;A var.</description>
     </item>
     
     <item>
       <title>Probability</title>
-      <link>/course-notes/ug2/probability/</link>
+      <link>https://yellowtid.es/course-notes/ug2/probability/</link>
       <pubDate>Mon, 20 Sep 2021 10:57:26 +0100</pubDate>
       
-      <guid>/course-notes/ug2/probability/</guid>
+      <guid>https://yellowtid.es/course-notes/ug2/probability/</guid>
       <description>Probability  Admin  Timetable &amp;amp; deadlines Handy links Assessment  Notes  Week 1 &amp;ndash; Basic Theory of Probability  </description>
     </item>
     
     <item>
       <title>Several Variable Calculus and Differential Equations</title>
-      <link>/course-notes/ug2/svcde/</link>
+      <link>https://yellowtid.es/course-notes/ug2/svcde/</link>
       <pubDate>Mon, 20 Sep 2021 10:57:26 +0100</pubDate>
       
-      <guid>/course-notes/ug2/svcde/</guid>
+      <guid>https://yellowtid.es/course-notes/ug2/svcde/</guid>
       <description>Several Variable Calculus and Differential Equations  Admin  Timetable &amp;amp; deadlines Handy links Assessment  Notes  Week 1 &amp;ndash; Vectors &amp;amp; Vector Functions  </description>
     </item>
     
     <item>
       <title>Write-ups</title>
-      <link>/write-ups/</link>
+      <link>https://yellowtid.es/write-ups/</link>
       <pubDate>Wed, 18 Aug 2021 13:19:15 +0300</pubDate>
       
-      <guid>/write-ups/</guid>
-      <description>None yet.</description>
+      <guid>https://yellowtid.es/write-ups/</guid>
+      <description></description>
     </item>
     
     <item>
       <title>LFSRs</title>
-      <link>/self-study-notes/lfsr/</link>
+      <link>https://yellowtid.es/self-study-notes/lfsr/</link>
       <pubDate>Tue, 17 Aug 2021 23:54:51 +0300</pubDate>
       
-      <guid>/self-study-notes/lfsr/</guid>
+      <guid>https://yellowtid.es/self-study-notes/lfsr/</guid>
       <description>First, a primer The LFSRs (Linear Feedback Shift Registers) represent a family of very low-level, simple to implement, and darn quick ways of generating seemingly random sequences of bits. It is no surprise then that they are often used as PRNGs (pseudo-random number generators).
  In spite of their many aforementioned practical qualities they are, however, definitely not well known for their cryptographic strength.
  But let&amp;rsquo;s take things one at a time.</description>
     </item>
     
     <item>
+      <title>Self-study notes</title>
+      <link>https://yellowtid.es/self-study-notes/</link>
+      <pubDate>Tue, 17 Aug 2021 23:47:01 +0300</pubDate>
+      
+      <guid>https://yellowtid.es/self-study-notes/</guid>
+      <description>Notes on topics I study/ied outside of uni.  Cryptography  LFSRs  </description>
+    </item>
+    
+    <item>
       <title>Computing discrete logs over GF(2 ^ n) in practice</title>
-      <link>/blog/posts/computing-discrete-logs-over-gf2-n-in-practice/</link>
+      <link>https://yellowtid.es/blog/posts/computing-discrete-logs-over-gf2-n-in-practice/</link>
       <pubDate>Mon, 16 Aug 2021 17:22:39 +0300</pubDate>
       
-      <guid>/blog/posts/computing-discrete-logs-over-gf2-n-in-practice/</guid>
+      <guid>https://yellowtid.es/blog/posts/computing-discrete-logs-over-gf2-n-in-practice/</guid>
       <description>Quick how-to # sage K.&amp;lt;x&amp;gt; = GF(2 ** n, impl=&#39;pari_ffelt&#39;) # invoke pari via SageMath&#39;s bindings g = K(x ** 4 + x ** 2 + 1) h = g ** 123 h.log(g) # =&amp;gt; 123 The exact implementation SageMath uses for .log() with pari_ffelt can be found here.
 Even for a (relatively) large $n$ this seems to be instantaneous, as opposed to the default implementation which simply hangs.
 Other things to note Performing this calculation directly (in PARI/GP), e.</description>
+    </item>
+    
+    <item>
+      <title>Course notes</title>
+      <link>https://yellowtid.es/course-notes/</link>
+      <pubDate>Mon, 16 Aug 2021 14:25:44 +0300</pubDate>
+      
+      <guid>https://yellowtid.es/course-notes/</guid>
+      <description>A collection of revision material from my undergraduate years at Edinburgh.  Year 2 1  Mathematics  Several Variable Calculus and Differential Equations Probability Fundamentals of Pure Mathematics  Computer Science  Introduction to Algorithms and Data Structures Foundations of Data Science Introduction to Computer Systems Reasoning and Agents    Academic year 2021/22.&amp;#160;&amp;#x21a9;&amp;#xfe0e;
+   </description>
     </item>
     
   </channel>
