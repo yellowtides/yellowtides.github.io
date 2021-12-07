@@ -20,7 +20,7 @@ Other things to note Performing this calculation directly (in PARI/GP), e." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yellowtid.es/blog/posts/computing-discrete-logs-over-gf2-n-in-practice/" /><meta property="og:image" content="https://yellowtid.es/images/share.png"/><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2021-08-16T17:22:39+03:00" />
-<meta property="article:modified_time" content="2021-08-16T17:22:39+03:00" /><meta property="og:site_name" content="Maths. CompSci. Study notes." />
+<meta property="article:modified_time" content="2021-08-16T17:22:39+03:00" /><meta property="og:site_name" content="Mathematics • Computer Science • Ideas" />
 
 
 
@@ -251,19 +251,19 @@ Other things to note Performing this calculation directly (in PARI/GP), e."><met
 </head>
 
 <body>
-  <header><a href="/" class="title">
-  <h2>Maths. CompSci. Study notes.</h2>
+  <header><a href="../../../" class="title">
+  <h2>Mathematics • Computer Science • Ideas</h2>
 </a>
-<nav><a href="/">Home</a>
+<nav><a href="../../../">Home</a>
 
-<a href="/course-notes/">Course notes</a>
+<a href="../../../course-notes/">Course notes</a>
 
-<a href="/self-study-notes/">Self-study notes</a>
+<a href="../../../self-study-notes/">Self-study notes</a>
 
-<a href="/write-ups/">Write-ups</a>
+<a href="../../../write-ups/">Write-ups</a>
 
 
-<a href="/blog">Blog</a>
+<a href="../../../blog">Blog</a>
 
 </nav>
 </header>
@@ -283,34 +283,34 @@ Other things to note Performing this calculation directly (in PARI/GP), e."><met
 
 <content>
   <h2 id="quick-how-to">Quick how-to</h2>
-<pre><code># sage
-K.&lt;x&gt; = GF(2 ** n, impl='pari_ffelt') # invoke pari via SageMath's bindings
-g = K(x ** 4 + x ** 2 + 1)
-h = g ** 123
-h.log(g) 	
-# =&gt; 123
-</code></pre><p>The exact implementation SageMath uses for <code>.log()</code> with <code>pari_ffelt</code> can be found <a href="https://github.com/sagemath/sage/blob/d6c5cd9be78cc448ee4c54bac93385b1244a234c/src/sage/rings/finite_rings/element_pari_ffelt.pyx#L1019">here</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># sage</span>
+K<span style="color:#f92672">.&lt;</span>x<span style="color:#f92672">&gt;</span> <span style="color:#f92672">=</span> GF(<span style="color:#ae81ff">2</span> <span style="color:#f92672">**</span> n, impl<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;pari_ffelt&#39;</span>) <span style="color:#75715e"># invoke pari via SageMath&#39;s bindings</span>
+g <span style="color:#f92672">=</span> K(x <span style="color:#f92672">**</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">+</span> x <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>)
+h <span style="color:#f92672">=</span> g <span style="color:#f92672">**</span> <span style="color:#ae81ff">123</span>
+h<span style="color:#f92672">.</span>log(g) 	
+<span style="color:#75715e"># =&gt; 123</span>
+</code></pre></div><p>The exact implementation SageMath uses for <code>.log()</code> with <code>pari_ffelt</code> can be found <a href="https://github.com/sagemath/sage/blob/d6c5cd9be78cc448ee4c54bac93385b1244a234c/src/sage/rings/finite_rings/element_pari_ffelt.pyx#L1019">here</a>.</p>
 <p>Even for a (relatively) large $n$ this seems to be instantaneous, as opposed to the default implementation which simply hangs.</p>
 <h2 id="other-things-to-note">Other things to note</h2>
 <p>Performing this calculation directly (in PARI/GP), e.g.</p>
-<pre><code># gp
-x = ffgen(2^n, 'x)
-g = x^4 + x^2 + 1 
-h = g^123
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># gp</span>
+x <span style="color:#f92672">=</span> ffgen(<span style="color:#ae81ff">2</span><span style="color:#f92672">^</span>n, <span style="color:#e6db74">&#39;x)</span>
+g <span style="color:#f92672">=</span> x<span style="color:#f92672">^</span><span style="color:#ae81ff">4</span> <span style="color:#f92672">+</span> x<span style="color:#f92672">^</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> 
+h <span style="color:#f92672">=</span> g<span style="color:#f92672">^</span><span style="color:#ae81ff">123</span>
 fflog(h, g)
-# =&gt; 123
-</code></pre><p>makes PARI earnestly hand you a misleading result. As it turns out, <code>ffgen(2^n, 'x)</code> generates an irreducible monic polynomial of degree $n$ over $\mathbb{F}_{p}$ which serves as the modulus of your $\mathbb{F}_{p^n}$.</p>
+<span style="color:#75715e"># =&gt; 123</span>
+</code></pre></div><p>makes PARI earnestly hand you a misleading result. As it turns out, <code>ffgen(2^n, 'x)</code> generates an irreducible monic polynomial of degree $n$ over $\mathbb{F}_{p}$ which serves as the modulus of your $\mathbb{F}_{p^n}$.</p>
 <p>There&rsquo;s no finite field structure in PARI. Finite fields are represented only with their elements (FFELTs).</p>
-<pre><code># gp
-x.mod
-# =&gt; degree n irreducible monic
-g.mod
-# =&gt; same degree n irreducible monic
-</code></pre><p>To avoid this, you can supply your own modulus. Irreducibility is not checked.</p>
-<pre><code># gp
-x = ffgen(modulus)
-...
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># gp</span>
+x<span style="color:#f92672">.</span>mod
+<span style="color:#75715e"># =&gt; degree n irreducible monic</span>
+g<span style="color:#f92672">.</span>mod
+<span style="color:#75715e"># =&gt; same degree n irreducible monic</span>
+</code></pre></div><p>To avoid this, you can supply your own modulus. Irreducibility is not checked.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># gp</span>
+x <span style="color:#f92672">=</span> ffgen(modulus)
+<span style="color:#f92672">...</span>
+</code></pre></div>
 </content>
 <p>
   

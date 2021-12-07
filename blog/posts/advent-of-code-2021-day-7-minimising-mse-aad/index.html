@@ -7,16 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Advent of Code 2021, Day 7: Minimising MSE &#43; AAD λ yellowtid.es</title>
 <meta name="title" content="Advent of Code 2021, Day 7: Minimising MSE &#43; AAD" />
-<meta name="description" content="The problem at hand It is the 7th day of the 2021 Advent of Code programming challenge! We are given a dataset of $n$ points $X = (x_1, x_2, &hellip;, x_n) \in \mathbb{Z}^n$, and are asked to find $$\gamma = \text{argmin}_{x\in\mathbb{R}} \sum_{i=1}^n \text{dist}&#39;(x,\, x_i),$$ or, in other words, the value of $x \in \mathbb{R}$ that minimises the total sum of a distance function from it to all datapoints $$\text{dist}&#39;(x,\, x_i) = 1 &#43; 2 &#43; &hellip; &#43; |x-x_i| = \frac{1}{2}|x-x_i|\left(|x-x_i|&#43;1\right)." />
+<meta name="description" content="The problem at hand It is the 7th day of the 2021 Advent of Code programming challenge! For the second challenge, we are given a dataset of $n$ points $X = (x_1, x_2, &hellip;, x_n) \in \mathbb{Z}^n$. We are then asked to find $$\gamma = \text{argmin}_{x\in\mathbb{R}} \sum_{i=1}^n \text{dist}&#39;(x,\, x_i),$$ or, in other words, the value of $x \in \mathbb{R}$ that minimises the total sum of a distance function from it to all datapoints $$\text{dist}&#39;(x,\, x_i) = 1 &#43; 2 &#43; &hellip; &#43; |x-x_i| = \frac{1}{2}|x-x_i|\left(|x-x_i|&#43;1\right)." />
 <meta name="keywords" content="maths,programming,proofs,statistics," />
 
 
 <meta property="og:title" content="Advent of Code 2021, Day 7: Minimising MSE &#43; AAD" />
-<meta property="og:description" content="The problem at hand It is the 7th day of the 2021 Advent of Code programming challenge! We are given a dataset of $n$ points $X = (x_1, x_2, &hellip;, x_n) \in \mathbb{Z}^n$, and are asked to find $$\gamma = \text{argmin}_{x\in\mathbb{R}} \sum_{i=1}^n \text{dist}&#39;(x,\, x_i),$$ or, in other words, the value of $x \in \mathbb{R}$ that minimises the total sum of a distance function from it to all datapoints $$\text{dist}&#39;(x,\, x_i) = 1 &#43; 2 &#43; &hellip; &#43; |x-x_i| = \frac{1}{2}|x-x_i|\left(|x-x_i|&#43;1\right)." />
+<meta property="og:description" content="The problem at hand It is the 7th day of the 2021 Advent of Code programming challenge! For the second challenge, we are given a dataset of $n$ points $X = (x_1, x_2, &hellip;, x_n) \in \mathbb{Z}^n$. We are then asked to find $$\gamma = \text{argmin}_{x\in\mathbb{R}} \sum_{i=1}^n \text{dist}&#39;(x,\, x_i),$$ or, in other words, the value of $x \in \mathbb{R}$ that minimises the total sum of a distance function from it to all datapoints $$\text{dist}&#39;(x,\, x_i) = 1 &#43; 2 &#43; &hellip; &#43; |x-x_i| = \frac{1}{2}|x-x_i|\left(|x-x_i|&#43;1\right)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yellowtid.es/blog/posts/advent-of-code-2021-day-7-minimising-mse-aad/" /><meta property="og:image" content="https://yellowtid.es/images/share.png"/><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2021-12-07T06:16:13+00:00" />
-<meta property="article:modified_time" content="2021-12-07T06:16:13+00:00" /><meta property="og:site_name" content="Maths. CompSci. Study notes." />
+<meta property="article:modified_time" content="2021-12-07T06:16:13+00:00" /><meta property="og:site_name" content="Mathematics • Computer Science • Ideas" />
 
 
 
@@ -25,14 +25,14 @@
 <meta name="twitter:image" content="https://yellowtid.es/images/share.png"/>
 
 <meta name="twitter:title" content="Advent of Code 2021, Day 7: Minimising MSE &#43; AAD"/>
-<meta name="twitter:description" content="The problem at hand It is the 7th day of the 2021 Advent of Code programming challenge! We are given a dataset of $n$ points $X = (x_1, x_2, &hellip;, x_n) \in \mathbb{Z}^n$, and are asked to find $$\gamma = \text{argmin}_{x\in\mathbb{R}} \sum_{i=1}^n \text{dist}&#39;(x,\, x_i),$$ or, in other words, the value of $x \in \mathbb{R}$ that minimises the total sum of a distance function from it to all datapoints $$\text{dist}&#39;(x,\, x_i) = 1 &#43; 2 &#43; &hellip; &#43; |x-x_i| = \frac{1}{2}|x-x_i|\left(|x-x_i|&#43;1\right)."/>
+<meta name="twitter:description" content="The problem at hand It is the 7th day of the 2021 Advent of Code programming challenge! For the second challenge, we are given a dataset of $n$ points $X = (x_1, x_2, &hellip;, x_n) \in \mathbb{Z}^n$. We are then asked to find $$\gamma = \text{argmin}_{x\in\mathbb{R}} \sum_{i=1}^n \text{dist}&#39;(x,\, x_i),$$ or, in other words, the value of $x \in \mathbb{R}$ that minimises the total sum of a distance function from it to all datapoints $$\text{dist}&#39;(x,\, x_i) = 1 &#43; 2 &#43; &hellip; &#43; |x-x_i| = \frac{1}{2}|x-x_i|\left(|x-x_i|&#43;1\right)."/>
 
 
 
 <meta itemprop="name" content="Advent of Code 2021, Day 7: Minimising MSE &#43; AAD">
-<meta itemprop="description" content="The problem at hand It is the 7th day of the 2021 Advent of Code programming challenge! We are given a dataset of $n$ points $X = (x_1, x_2, &hellip;, x_n) \in \mathbb{Z}^n$, and are asked to find $$\gamma = \text{argmin}_{x\in\mathbb{R}} \sum_{i=1}^n \text{dist}&#39;(x,\, x_i),$$ or, in other words, the value of $x \in \mathbb{R}$ that minimises the total sum of a distance function from it to all datapoints $$\text{dist}&#39;(x,\, x_i) = 1 &#43; 2 &#43; &hellip; &#43; |x-x_i| = \frac{1}{2}|x-x_i|\left(|x-x_i|&#43;1\right)."><meta itemprop="datePublished" content="2021-12-07T06:16:13+00:00" />
+<meta itemprop="description" content="The problem at hand It is the 7th day of the 2021 Advent of Code programming challenge! For the second challenge, we are given a dataset of $n$ points $X = (x_1, x_2, &hellip;, x_n) \in \mathbb{Z}^n$. We are then asked to find $$\gamma = \text{argmin}_{x\in\mathbb{R}} \sum_{i=1}^n \text{dist}&#39;(x,\, x_i),$$ or, in other words, the value of $x \in \mathbb{R}$ that minimises the total sum of a distance function from it to all datapoints $$\text{dist}&#39;(x,\, x_i) = 1 &#43; 2 &#43; &hellip; &#43; |x-x_i| = \frac{1}{2}|x-x_i|\left(|x-x_i|&#43;1\right)."><meta itemprop="datePublished" content="2021-12-07T06:16:13+00:00" />
 <meta itemprop="dateModified" content="2021-12-07T06:16:13+00:00" />
-<meta itemprop="wordCount" content="575"><meta itemprop="image" content="https://yellowtid.es/images/share.png"/>
+<meta itemprop="wordCount" content="567"><meta itemprop="image" content="https://yellowtid.es/images/share.png"/>
 <meta itemprop="keywords" content="maths,programming,proofs,statistics," />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -243,19 +243,19 @@
 </head>
 
 <body>
-  <header><a href="/" class="title">
-  <h2>Maths. CompSci. Study notes.</h2>
+  <header><a href="../../../" class="title">
+  <h2>Mathematics • Computer Science • Ideas</h2>
 </a>
-<nav><a href="/">Home</a>
+<nav><a href="../../../">Home</a>
 
-<a href="/course-notes/">Course notes</a>
+<a href="../../../course-notes/">Course notes</a>
 
-<a href="/self-study-notes/">Self-study notes</a>
+<a href="../../../self-study-notes/">Self-study notes</a>
 
-<a href="/write-ups/">Write-ups</a>
+<a href="../../../write-ups/">Write-ups</a>
 
 
-<a href="/blog">Blog</a>
+<a href="../../../blog">Blog</a>
 
 </nav>
 </header>
@@ -275,16 +275,16 @@
 
 <content>
   <h2 id="the-problem-at-hand">The problem at hand</h2>
-<p>It is the <a href="https://adventofcode.com/2021/day/7">7th day of the 2021 Advent of Code programming challenge</a>! We are given a dataset of $n$ points $X = (x_1, x_2, &hellip;, x_n) \in \mathbb{Z}^n$, and are asked to find
+<p>It is the <a href="https://adventofcode.com/2021/day/7">7th day of the 2021 Advent of Code programming challenge</a>! For the second challenge, we are given a dataset of $n$ points $X = (x_1, x_2, &hellip;, x_n) \in \mathbb{Z}^n$. We are then asked to find
 $$\gamma = \text{argmin}_{x\in\mathbb{R}} \sum_{i=1}^n \text{dist}'(x,\, x_i),$$
 or, in other words, the value of $x \in \mathbb{R}$ that minimises the total sum of a distance function from it to all datapoints
 $$\text{dist}'(x,\, x_i) = 1 + 2 + &hellip; + |x-x_i| = \frac{1}{2}|x-x_i|\left(|x-x_i|+1\right).$$</p>
-<p>Substituting, we see that what we wish to find is actually <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
+<p>Substituting, we see that what we wish to find is actually<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>
 $$\gamma = \text{argmin}_{x\in\mathbb{R}} \frac{1}{2}\sum_{i=1}^n |x-x_i|\left(|x-x_i|+1\right).$$</p>
 <h2 id="initial-manipulation">Initial manipulation</h2>
 <p>Note that, to simplify things, we can equivalently view the problem as wanting to find the global minimum to a function $f : \mathbb{R} \rightarrow \mathbb{R}$ defined as
 $$f(x) = \sum |x-x_i|\left(|x-x_i|+1\right) = \sum (x-x_i)^2 + \sum |x-x_i|.$$</p>
-<p>This is further equivalent to wanting to minimise
+<p>This is further equivalent to the global minimum of
 $$g(x) = \frac{1}{n}f(x) = \frac{1}{n}\sum (x-x_i)^2 + \frac{1}{n}\sum |x-x_i| = MSE + AAD,$$</p>
 <p>since $\frac{1}{n}$ is just a constant factor! MSE is the <a href="https://en.wikipedia.org/wiki/Mean_squared_error">mean squared error</a> usually found in linear regressions, and AAD is the less commonly known <a href="https://en.wikipedia.org/wiki/Average_absolute_deviation">average absolute deviation</a>.</p>
 <p>So really, the problem we are given is no different than that of finding the value that minimises the sum of the MSE and the AAD for a given dataset!</p>
@@ -292,7 +292,7 @@ $$g(x) = \frac{1}{n}f(x) = \frac{1}{n}\sum (x-x_i)^2 + \frac{1}{n}\sum |x-x_i| =
 <blockquote>
 <p>It is a well-known fact that the value that minimises the MSE of a dataset is the mean, and that the value that minimises the AAD for a dataset is the median. But what about their sum? Is it the mean? The median? Can it even be efficiently computed?</p>
 </blockquote>
-<p>To answer this, let&rsquo;s define some useful values first. Let $\mu_x = \frac{1}{n}{\sum_{i=1}^n x_i}$ be the mean of the given dataset, and let $\sigma_x^2 = \frac{1}{n}\sum_{i=1}^n(x_i-\mu_x)^2$ be its variance. Also remember that $\frac{d}{dx}|x| = \text{sgn}(x)$, where
+<p>To answer this, first let $\mu_x = \frac{1}{n}{\sum_{i=1}^n x_i}$ be the mean of the given dataset. Also remember that $\frac{d}{dx}|x| = \text{sgn}(x)$, where
 $$\text{sgn}(x) = \begin{cases}
 -1, &amp; x &lt; 0 \\<br>
 0, &amp; x = 0\\<br>

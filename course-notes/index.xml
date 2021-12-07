@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Course-notes on Maths. CompSci. Study notes.</title>
+    <title>Course notes on Mathematics • Computer Science • Ideas</title>
     <link>https://yellowtid.es/course-notes/</link>
-    <description>Recent content in Course-notes on Maths. CompSci. Study notes.</description>
+    <description>Recent content in Course notes on Mathematics • Computer Science • Ideas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2021, Andi Dicu.</copyright>
-    <lastBuildDate>Mon, 20 Sep 2021 13:30:01 +0100</lastBuildDate><atom:link href="https://yellowtid.es/course-notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Aug 2021 14:25:44 +0300</lastBuildDate><atom:link href="https://yellowtid.es/course-notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Assessment</title>
       <link>https://yellowtid.es/course-notes/ug2/probability/assessment/</link>

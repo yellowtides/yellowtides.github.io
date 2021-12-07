@@ -20,7 +20,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yellowtid.es/write-ups/htb-ctf-2021-quals/waiting-list/" /><meta property="og:image" content="https://yellowtid.es/images/share.png"/><meta property="article:section" content="write-ups" />
 <meta property="article:published_time" content="2021-11-27T04:22:08+00:00" />
-<meta property="article:modified_time" content="2021-11-27T04:22:08+00:00" /><meta property="og:site_name" content="Maths. CompSci. Study notes." />
+<meta property="article:modified_time" content="2021-11-27T04:22:08+00:00" /><meta property="og:site_name" content="Mathematics • Computer Science • Ideas" />
 
 
 
@@ -40,7 +40,7 @@
  Your mechanical arm needs to be replaced. Unfortunately, Steamshake Inc which is the top mechanical arm transplants has a long waiting list. You have found a SQL injection vulnerability and recovered two tables from their database. Could you take advantage of the information in there to speed things up? Don&rsquo;t forget, you have a date on Monday!
  Proof of concept First, let us translate the given code into something more mathematical in order to try to model it."><meta itemprop="datePublished" content="2021-11-27T04:22:08+00:00" />
 <meta itemprop="dateModified" content="2021-11-27T04:22:08+00:00" />
-<meta itemprop="wordCount" content="1102"><meta itemprop="image" content="https://yellowtid.es/images/share.png"/>
+<meta itemprop="wordCount" content="1101"><meta itemprop="image" content="https://yellowtid.es/images/share.png"/>
 <meta itemprop="keywords" content="" />
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -251,19 +251,19 @@
 </head>
 
 <body>
-  <header><a href="/" class="title">
-  <h2>Maths. CompSci. Study notes.</h2>
+  <header><a href="../../../" class="title">
+  <h2>Mathematics • Computer Science • Ideas</h2>
 </a>
-<nav><a href="/">Home</a>
+<nav><a href="../../../">Home</a>
 
-<a href="/course-notes/">Course notes</a>
+<a href="../../../course-notes/">Course notes</a>
 
-<a href="/self-study-notes/">Self-study notes</a>
+<a href="../../../self-study-notes/">Self-study notes</a>
 
-<a href="/write-ups/">Write-ups</a>
+<a href="../../../write-ups/">Write-ups</a>
 
 
-<a href="/blog">Blog</a>
+<a href="../../../blog">Blog</a>
 
 </nav>
 </header>
@@ -280,29 +280,29 @@
 </blockquote>
 <h3 id="proof-of-concept">Proof of concept</h3>
 <p>First, let us translate the given code into something more mathematical in order to try to model it. At the crux of the challenge lies the provided signing function:</p>
-<pre><code class="language-pseudocode" data-lang="pseudocode">P = 115792089210356248762697446949407573529996955224135760342422259061068512044369
-g = 5
-// secret
-key = ...
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">P <span style="color:#f92672">=</span> <span style="color:#ae81ff">115792089210356248762697446949407573529996955224135760342422259061068512044369</span>
+g <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+<span style="color:#75715e"># secret</span>
+key <span style="color:#f92672">=</span> <span style="color:#f92672">...</span>
 
 sign(M):
-    // since 256 is the number of bits in P
-    h = MSB(SHA1(M), 256)
-    // the nonce used in ECDSA
-    k = RAND(1, P-1)
-    // the calculation of r differs from standard ECDSA!
-    // should raise some suspicions, as (*, Zmod(P)) is
-    // usually a much weaker trapdoor than addition on
-    // an EC, esp. since our P is relatively smooth
-    r = g^k (mod P)
-    s = k^(-1) * (h + key * r) (mod P)
-    lsb = LSB(k, 7)
-    return h, r, s, lsb
-</code></pre><p>So where and how is this actually used? Well, it seems to have been used on $200$ different appointments (provided to us in <code>appointments.txt</code>), the signatures of which (including <code>h</code> for convenience, and, more importantly, <code>lsb</code>) are provided to us in <code>signatures.txt</code>.</p>
+    <span style="color:#75715e"># since 256 is the number of bits in P</span>
+    h <span style="color:#f92672">=</span> MSB(SHA1(M), <span style="color:#ae81ff">256</span>)
+    <span style="color:#75715e"># the nonce used in ECDSA</span>
+    k <span style="color:#f92672">=</span> RAND(<span style="color:#ae81ff">1</span>, P<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+    <span style="color:#75715e"># the calculation of r differs from standard ECDSA!</span>
+    <span style="color:#75715e"># should raise some suspicions, as (*, Zmod(P)) is</span>
+    <span style="color:#75715e"># usually a much weaker trapdoor than addition on</span>
+    <span style="color:#75715e"># an EC, esp. since P-1 is relatively smooth</span>
+    r <span style="color:#f92672">=</span> g<span style="color:#f92672">^</span>k (mod P)
+    s <span style="color:#f92672">=</span> k<span style="color:#f92672">^</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>) <span style="color:#f92672">*</span> (h <span style="color:#f92672">+</span> key <span style="color:#f92672">*</span> r) (mod P)
+    lsb <span style="color:#f92672">=</span> LSB(k, <span style="color:#ae81ff">7</span>)
+    <span style="color:#66d9ef">return</span> h, r, s, lsb
+</code></pre></div><p>So where and how is this actually used? Well, it seems to have been used on $200$ different appointments (provided to us in <code>appointments.txt</code>), the signatures of which (including <code>h</code> for convenience, and, more importantly, <code>lsb</code>) are provided to us in <code>signatures.txt</code>.</p>
 <p>Providing the LSB of the nonce is something I&rsquo;ve never encountered in a textbook implementation of ECDSA (no wonder, since it serves 0 practical use), so this should immediately crank one&rsquo;s eyebrow height by a bit.</p>
 <p>Experience dictates that I should try to write the modular equation on the 4th line of the signing function (<code>s = k^(-1) * (h + key * r) (mod P)</code>) using the given LSB, as it might decrease the maximum size of some of the hidden parameters. This, in turn, might lead to the famous ECDSA lattice attack on biased (small-sized) nonces being applicable (<a href="https://eprint.iacr.org/2019/023.pdf)">https://eprint.iacr.org/2019/023.pdf)</a>. The hidden number problem can very easily be exploited, so let&rsquo;s get to manipulating!</p>
 <p>$$\begin{align}
-s\equiv k^{-1} \cdot &amp;(h + key \cdot r) \pmod P
+s\equiv\,&amp;k^{-1} \cdot (h + key \cdot r) \pmod P
 \\&amp;\iff s\cdot k \equiv h + key\cdot r \pmod P \\<br>
 &amp;\iff s\cdot (u\cdot 2^7+lsb) \equiv h + key\cdot r \pmod P \\<br>
 &amp;\iff s\cdot u\cdot128  \equiv  h + key\cdot r - s\cdot lsb \pmod P \\<br>
@@ -310,11 +310,12 @@ s\equiv k^{-1} \cdot &amp;(h + key \cdot r) \pmod P
 \end{align}$$</p>
 <p>Where $u$ represents the unknown $256 - 7 = 249$ most significant bits of the nonce $k = u\cdot 2^7 + lsb$. Let&rsquo;s remind ourselves of the variables that we <strong>do not know</strong> in the equation above: $u$, and $key$.  Therefore, let $a \equiv -(128\cdot s)^{-1}(h-s\cdot lsb) \pmod P$ be a <strong>known</strong> constant, and let $t \equiv r\cdot (128\cdot s)^{-1} \pmod P$ be another <strong>known</strong> constant. Then, the equation above becomes</p>
 <p>$$\begin{align*}
-u \equiv (128\cdot s)^{-1}(h-s\cdot lsb) + key\cdot r\cdot (128\cdot s)^{-1} \pmod P \\\iff u \equiv -a + key\cdot t \pmod P
+u \equiv\, &amp;(128\cdot s)^{-1}(h-s\cdot lsb) + key\cdot r\cdot (128\cdot s)^{-1} \pmod P \\<br>
+&amp;\iff u \equiv -a + key\cdot t \pmod P
 .\end{align*}$$</p>
 <p>Or, by moving everything to the LHS, $$u - t\cdot key + a \equiv 0 \pmod P.$$</p>
 <p>Again, we know that $u$ is $249$ bits long ($\approx B = 2^{249}$), $P$ is $256$ bits long, and that $a$ and $t$ are known. This means that the nonce $u$ is indeed biased by $7$ bits. We also have $200$ different plaintext/signature pairs, and hence $200$ equations of this form where the $key$ is constant throughout but the LSBs of the nonces $u$ can (and likely does) differ. Now, let us check with the requirements mentioned at the end of $4.1$ in <a href="https://eprint.iacr.org/2019/023.pdf">https://eprint.iacr.org/2019/023.pdf</a> to see if we can actually apply this attack. We do this with a little SageMath:</p>
-<p><img src="../waiting-list-check.png" alt=""></p>
+<p><img src="waiting-list-check.png" alt=""></p>
 <p>Aaaaand yep! We&rsquo;ve struck gold! $249 \leq 252$, and so we have just enough messages for the bias to make the attack feasible.</p>
 <h3 id="the-attack">The attack</h3>
 <p>Since the requirement mentioned above is met, all that&rsquo;s left to do is get to implementing the textbook LLL solution to the hidden number problem. For any one of the $200$ appointments $m_i$, assume the corresponding nonce $u_i$ and known parameters $$t_i \equiv r\cdot (128\cdot s)^{-1} \pmod P$$ and $$a_i \equiv -(128\cdot s)^{-1}(h-s\cdot lsb) \pmod P.$$ In other words, consider the relation that we deduced above:
@@ -334,12 +335,12 @@ a_1 &amp; a_2 &amp; &hellip; &amp; a_m &amp; &amp; B
  <span style="color:#f92672">&#34;r&#34;</span>: <span style="color:#e6db74">&#34;5&#34;</span>,
  <span style="color:#f92672">&#34;s&#34;</span>: <span style="color:#e6db74">&#34;367c299754595a06777081f3956e2da823cb57dd352f14e32ae6db7e5f335d84&#34;</span>}
 </code></pre></div><p><strong>N.B.</strong> In practice, we might get multiple rows ending in $B$ in the final matrix. Hence, we construct a <em>set</em> of all the candidate private keys/second-to-last row entries. This isn&rsquo;t a major concern however, since we can expect this set to be really small (after all, the matrix has at most $200$ rows), so we can try the signatures that they would generate one at a time and see if they validate. For my solve script and the given problem data, the possible signatures  for <code>william;yarmouth;22-11-2021;09:00</code> (one per candidate private key) were</p>
-<pre><code>{&quot;pt&quot;: &quot;william;yarmouth;22-11-2021;09:00&quot;, &quot;r&quot;: &quot;5&quot;, &quot;s&quot;: &quot;83edc3e7b414a270d03f027cd54d42fcc62ce44cc4cb3eff14395904b908ece8&quot;}
-{&quot;pt&quot;: &quot;william;yarmouth;22-11-2021;09:00&quot;, &quot;r&quot;: &quot;5&quot;, &quot;s&quot;: &quot;7bae5612ab4c6ad04080dc1f5102129368122c20e41b0d7df8943b1c61aa13ff&quot;}
-{&quot;pt&quot;: &quot;william;yarmouth;22-11-2021;09:00&quot;, &quot;r&quot;: &quot;5&quot;, &quot;s&quot;: &quot;367c299754595a06777081f3956e2da823cb57dd352f14e32ae6db7e5f335d84&quot;}
-{&quot;pt&quot;: &quot;william;yarmouth;22-11-2021;09:00&quot;, &quot;r&quot;: &quot;5&quot;, &quot;s&quot;: &quot;470d1190cdbedea4fed090cdc9107f6278b22ca2fedbc3a5189ebd8e6743c7a7&quot;}
-</code></pre><p>Since they was only $4$, I tried each of them by hand, one at a time. The third one verified successfully.</p>
-<p><img src="../waiting-list-flag.png" alt=""></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{<span style="color:#f92672">&#34;pt&#34;</span>: <span style="color:#e6db74">&#34;william;yarmouth;22-11-2021;09:00&#34;</span>, <span style="color:#f92672">&#34;r&#34;</span>: <span style="color:#e6db74">&#34;5&#34;</span>, <span style="color:#f92672">&#34;s&#34;</span>: <span style="color:#e6db74">&#34;83edc3e7b414a270d03f027cd54d42fcc62ce44cc4cb3eff14395904b908ece8&#34;</span>}
+{<span style="color:#f92672">&#34;pt&#34;</span>: <span style="color:#e6db74">&#34;william;yarmouth;22-11-2021;09:00&#34;</span>, <span style="color:#f92672">&#34;r&#34;</span>: <span style="color:#e6db74">&#34;5&#34;</span>, <span style="color:#f92672">&#34;s&#34;</span>: <span style="color:#e6db74">&#34;7bae5612ab4c6ad04080dc1f5102129368122c20e41b0d7df8943b1c61aa13ff&#34;</span>}
+{<span style="color:#f92672">&#34;pt&#34;</span>: <span style="color:#e6db74">&#34;william;yarmouth;22-11-2021;09:00&#34;</span>, <span style="color:#f92672">&#34;r&#34;</span>: <span style="color:#e6db74">&#34;5&#34;</span>, <span style="color:#f92672">&#34;s&#34;</span>: <span style="color:#e6db74">&#34;367c299754595a06777081f3956e2da823cb57dd352f14e32ae6db7e5f335d84&#34;</span>}
+{<span style="color:#f92672">&#34;pt&#34;</span>: <span style="color:#e6db74">&#34;william;yarmouth;22-11-2021;09:00&#34;</span>, <span style="color:#f92672">&#34;r&#34;</span>: <span style="color:#e6db74">&#34;5&#34;</span>, <span style="color:#f92672">&#34;s&#34;</span>: <span style="color:#e6db74">&#34;470d1190cdbedea4fed090cdc9107f6278b22ca2fedbc3a5189ebd8e6743c7a7&#34;</span>}
+</code></pre></div><p>Since they was only $4$, I tried each of them by hand, one at a time. The third one verified successfully.</p>
+<p><img src="waiting-list-flag.png" alt=""></p>
 <p>Et voilà! First blood!</p>
 <section class="footnotes" role="doc-endnotes">
 <hr>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>sage on Maths. CompSci. Study notes.</title>
+    <title>sage on Mathematics • Computer Science • Ideas</title>
     <link>https://yellowtid.es/blog/tags/sage/</link>
-    <description>Recent content in sage on Maths. CompSci. Study notes.</description>
+    <description>Recent content in sage on Mathematics • Computer Science • Ideas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2021, Andi Dicu.</copyright>
@@ -14,7 +14,7 @@
       <pubDate>Mon, 16 Aug 2021 17:22:39 +0300</pubDate>
       
       <guid>https://yellowtid.es/blog/posts/computing-discrete-logs-over-gf2-n-in-practice/</guid>
-      <description>Quick how-to # sage K.&amp;lt;x&amp;gt; = GF(2 ** n, impl=&#39;pari_ffelt&#39;) # invoke pari via SageMath&#39;s bindings g = K(x ** 4 + x ** 2 + 1) h = g ** 123 h.log(g) # =&amp;gt; 123 The exact implementation SageMath uses for .log() with pari_ffelt can be found here.
+      <description>Quick how-to # sage K.&amp;lt;x&amp;gt; = GF(2 ** n, impl=&amp;#39;pari_ffelt&amp;#39;) # invoke pari via SageMath&amp;#39;s bindings g = K(x ** 4 + x ** 2 + 1) h = g ** 123 h.log(g) # =&amp;gt; 123 The exact implementation SageMath uses for .log() with pari_ffelt can be found here.
 Even for a (relatively) large $n$ this seems to be instantaneous, as opposed to the default implementation which simply hangs.
 Other things to note Performing this calculation directly (in PARI/GP), e.</description>
     </item>

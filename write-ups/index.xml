@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Write-ups on Maths. CompSci. Study notes.</title>
+    <title>Write-ups on Mathematics • Computer Science • Ideas</title>
     <link>https://yellowtid.es/write-ups/</link>
-    <description>Recent content in Write-ups on Maths. CompSci. Study notes.</description>
+    <description>Recent content in Write-ups on Mathematics • Computer Science • Ideas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
     <copyright>Copyright © 2021, Andi Dicu.</copyright>
-    <lastBuildDate>Sat, 27 Nov 2021 04:22:08 +0000</lastBuildDate><atom:link href="https://yellowtid.es/write-ups/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Aug 2021 13:19:15 +0300</lastBuildDate><atom:link href="https://yellowtid.es/write-ups/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Space Pirates</title>
+      <link>https://yellowtid.es/write-ups/htb-ctf-2021-quals/space-pirates/</link>
+      <pubDate>Tue, 07 Dec 2021 10:06:11 +0000</pubDate>
+      
+      <guid>https://yellowtid.es/write-ups/htb-ctf-2021-quals/space-pirates/</guid>
+      <description>Space Pirates [Easy] Hack the Box CTF 2021 [Qualifiers]
+Jones and his crew have started a long journey to discover the legendary treasure left by the guardians of time in the early beginnings of the universe. Mr Jones, though, is wanted by the government for his crimes as a pirate. Our agents entered his base and discovered digital evidence about the way captain Jones contacts with his closest friends back home.</description>
+    </item>
+    
     <item>
       <title>Waiting List</title>
       <link>https://yellowtid.es/write-ups/htb-ctf-2021-quals/waiting-list/</link>
