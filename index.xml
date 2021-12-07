@@ -18,6 +18,17 @@
     </item>
     
     <item>
+      <title>Waiting List</title>
+      <link>https://yellowtid.es/write-ups/htb-ctf-2021-quals/waiting-list/</link>
+      <pubDate>Sat, 27 Nov 2021 04:22:08 +0000</pubDate>
+      
+      <guid>https://yellowtid.es/write-ups/htb-ctf-2021-quals/waiting-list/</guid>
+      <description>Waiting List [Hard; fb] Hack the Box CTF 2021 [Qualifiers]
+ Your mechanical arm needs to be replaced. Unfortunately, Steamshake Inc which is the top mechanical arm transplants has a long waiting list. You have found a SQL injection vulnerability and recovered two tables from their database. Could you take advantage of the information in there to speed things up? Don&amp;rsquo;t forget, you have a date on Monday!
+ Proof of concept First, let us translate the given code into something more mathematical in order to try to model it.</description>
+    </item>
+    
+    <item>
       <title>Assessment</title>
       <link>https://yellowtid.es/course-notes/ug2/probability/assessment/</link>
       <pubDate>Mon, 20 Sep 2021 13:30:01 +0100</pubDate>
@@ -99,7 +110,7 @@
       <pubDate>Wed, 18 Aug 2021 13:19:15 +0300</pubDate>
       
       <guid>https://yellowtid.es/write-ups/</guid>
-      <description></description>
+      <description>Write-ups for cryptanalysis problems I&amp;rsquo;ve solved in the past.  Hack the Box CTF 2021 [Qualifiers]  Waiting List [Hard; fb]  </description>
     </item>
     
     <item>
